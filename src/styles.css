@@ -1,0 +1,238 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "@fontsource-variable/plus-jakarta-sans";
+@import "@fontsource/ibm-plex-mono/400.css";
+@import "@fontsource/ibm-plex-mono/500.css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #f4f3ef;
+  --foreground: #1c1d1f;
+  --card: #fffcf7;
+  --card-foreground: #1c1d1f;
+  --popover: #fffcf7;
+  --popover-foreground: #1c1d1f;
+  --primary: #3d6b67;
+  --primary-foreground: #f4f3ef;
+  --secondary: #ece9e2;
+  --secondary-foreground: #1c1d1f;
+  --muted: #ece9e2;
+  --muted-foreground: #5e615c;
+  --accent: #e4eee8;
+  --accent-foreground: #2a4543;
+  --destructive: #9b3d3d;
+  --destructive-foreground: #f4f3ef;
+  --border: color-mix(in oklab, #1c1d1f 12%, transparent);
+  --input: color-mix(in oklab, #1c1d1f 14%, transparent);
+  --ring: #3d6b67;
+  --success: #3d6b4f;
+  --warning: #8a6a32;
+  --info: #3d5870;
+  --subject-physics: #4d6b8a;
+  --subject-chemistry: #4d7a58;
+  --subject-mathematics: #5a6173;
+  --subject-cs: #3d6b67;
+  --subject-english: #6a5e52;
+  --subject-hindi: #7a5353;
+  --subject-default: #5e615c;
+  --shadow-border:
+    0px 0px 0px 1px rgba(28, 29, 31, 0.06),
+    0px 1px 2px -1px rgba(28, 29, 31, 0.06),
+    0px 2px 4px 0px rgba(28, 29, 31, 0.04);
+  --shadow-border-hover:
+    0px 0px 0px 1px rgba(28, 29, 31, 0.1),
+    0px 1px 2px -1px rgba(28, 29, 31, 0.08),
+    0px 4px 10px 0px rgba(28, 29, 31, 0.05);
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius: 12px;
+  --motion-stagger: 40ms;
+  --motion-micro: 80ms;
+  --motion-quick: 150ms;
+  --motion-fast: 250ms;
+  --motion-medium: 350ms;
+  --motion-slow: 400ms;
+  --ease-smooth-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.dark {
+  --background: #0c0d0f;
+  --foreground: #ecece8;
+  --card: #14161a;
+  --card-foreground: #ecece8;
+  --popover: #17191e;
+  --popover-foreground: #ecece8;
+  --primary: #7ea8a4;
+  --primary-foreground: #0c0d0f;
+  --secondary: #1b1e24;
+  --secondary-foreground: #ecece8;
+  --muted: #1b1e24;
+  --muted-foreground: #9a9b96;
+  --accent: #1c2624;
+  --accent-foreground: #c5ddd9;
+  --destructive: #d07272;
+  --destructive-foreground: #0c0d0f;
+  --border: color-mix(in oklab, #ecece8 10%, transparent);
+  --input: color-mix(in oklab, #ecece8 14%, transparent);
+  --ring: #7ea8a4;
+  --success: #7eaa8a;
+  --warning: #c4a574;
+  --info: #8aa4be;
+  --subject-physics: #8aa4be;
+  --subject-chemistry: #8aba96;
+  --subject-mathematics: #a8aebc;
+  --subject-cs: #7ea8a4;
+  --subject-english: #c4b8a8;
+  --subject-hindi: #c49a9a;
+  --subject-default: #9a9b96;
+  --shadow-border: 0 0 0 1px rgba(255, 255, 255, 0.07);
+  --shadow-border-hover: 0 0 0 1px rgba(255, 255, 255, 0.13);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-info: var(--info);
+  --color-subject-physics: var(--subject-physics);
+  --color-subject-chemistry: var(--subject-chemistry);
+  --color-subject-mathematics: var(--subject-mathematics);
+  --color-subject-cs: var(--subject-cs);
+  --color-subject-english: var(--subject-english);
+  --color-subject-hindi: var(--subject-hindi);
+  --color-subject-default: var(--subject-default);
+  --font-sans: "Plus Jakarta Sans Variable", "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans Variable", "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-2xl: 28px;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  html,
+  body,
+  #app {
+    min-height: 100%;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "ss01" on, "cv11" on;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+    letter-spacing: -0.03em;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--primary) 28%, transparent);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+.surface {
+  background: var(--card);
+  box-shadow: var(--shadow-border);
+}
+
+.hairline {
+  box-shadow: var(--shadow-border);
+}
+
+@keyframes jarvis-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.enter {
+  animation: jarvis-in var(--motion-fast) var(--ease-smooth-out) both;
+}
+
+.enter-2 {
+  animation: jarvis-in var(--motion-fast) var(--ease-smooth-out) both;
+  animation-delay: var(--motion-stagger);
+}
+
+.enter-3 {
+  animation: jarvis-in var(--motion-fast) var(--ease-smooth-out) both;
+  animation-delay: calc(var(--motion-stagger) * 2);
+}
+
+.enter-4 {
+  animation: jarvis-in var(--motion-fast) var(--ease-smooth-out) both;
+  animation-delay: calc(var(--motion-stagger) * 3);
+}
