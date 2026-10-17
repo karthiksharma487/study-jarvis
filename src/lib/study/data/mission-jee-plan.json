@@ -1,0 +1,2259 @@
+{
+  "generatedFrom": "Drona JEE 2.0 2027 - Batch Planner + Test Planner (uploaded PDFs)",
+  "classSchedule": {
+    "slot1": {
+      "label": "Slot 1",
+      "time": "16:00",
+      "endTime": "17:45"
+    },
+    "slot2": {
+      "label": "Slot 2",
+      "time": "18:15",
+      "endTime": "20:00"
+    },
+    "weeklyPattern": {
+      "1": {
+        "slot1": "chemistry",
+        "slot2": "physics"
+      },
+      "2": {
+        "slot1": "chemistry",
+        "slot2": "physics"
+      },
+      "3": {
+        "slot1": "mathematics",
+        "slot2": "physics"
+      },
+      "4": {
+        "slot1": "mathematics",
+        "slot2": "physics"
+      },
+      "5": {
+        "slot1": "mathematics",
+        "slot2": "chemistry"
+      },
+      "6": {
+        "slot1": "mathematics",
+        "slot2": "chemistry"
+      }
+    },
+    "note": "Pattern reflects the 7-13 Sept 2026 published timetable. Actual per-date lecture assignment (below) is ground truth where available; this pattern is the fallback for auto-generating lectures beyond the known planner range.",
+    "sundayOff": true,
+    "weeklyTestDay": "Sunday"
+  },
+  "chapters": {
+    "physics": [
+      "Basic Mathematics",
+      "Vectors",
+      "Units and Dimension",
+      "Motion in a Straight Line",
+      "Motion in a Plane",
+      "Laws of Motion",
+      "Friction",
+      "Circular Motion",
+      "Work, Energy and Power",
+      "Centre of Mass & System of Particles",
+      "Rotational Motion",
+      "Gravitation",
+      "Thermal Properties of Matter",
+      "Mechanical Properties of Solids",
+      "Mechanical Properties of Fluids",
+      "Oscillations",
+      "Waves",
+      "Errors and Measurements"
+    ],
+    "chemistry": [
+      "Some Basic Concepts of Chemistry",
+      "Structure of Atom",
+      "Classification of Elements and Periodicity",
+      "Chemical Bonding and Molecular Structure",
+      "Some Basic principles and Techniques (IUPAC Naming)",
+      "State of matter",
+      "Thermodynamics",
+      "Redox Reaction",
+      "Chemical Equilibrium",
+      "Ionic Equilibrium",
+      "Some Basic principles and Techniques (Isomerism)",
+      "Some Basic principles and Techniques (GOC)",
+      "Hydrocarbon",
+      "Purification and Analysis of Organic Compound",
+      "Environmental Chemistry",
+      "P-block Elements (Group 13 and 14)",
+      "S-block Element",
+      "Hydrogen and its Compound"
+    ],
+    "mathematics": [
+      "Basic Mathematics",
+      "Set Theory",
+      "Trigonometric Ratios & Identities",
+      "Trigonometric Equations",
+      "Quadratic Equations",
+      "Sequence and Series",
+      "Relation Function",
+      "Permutations and Combinations",
+      "Binomial theorem",
+      "Straight Lines",
+      "Circles",
+      "Conic Sections: Parabola",
+      "Conic Sections: Ellipse",
+      "Conic Sections: Hyperbola",
+      "Complex Number",
+      "Limits and Derivatives",
+      "Statistics",
+      "Probability",
+      "Introduction to Three Dimensional Geometry",
+      "Linear Inequalities",
+      "Solution of Triangle"
+    ]
+  },
+  "lectures": {
+    "physics": [
+      {
+        "date": "2026-06-04",
+        "chapter": "Basic Mathematics",
+        "topic": "Algebra"
+      },
+      {
+        "date": "2026-06-08",
+        "chapter": "Basic Mathematics",
+        "topic": "Trigonometry"
+      },
+      {
+        "date": "2026-06-09",
+        "chapter": "Basic Mathematics",
+        "topic": "Trigonometry"
+      },
+      {
+        "date": "2026-06-11",
+        "chapter": "Basic Mathematics",
+        "topic": "Coordinate Geometry, Binomial Expression"
+      },
+      {
+        "date": "2026-06-12",
+        "chapter": "Basic Mathematics",
+        "topic": "Functions, Logarithms"
+      },
+      {
+        "date": "2026-06-15",
+        "chapter": "Basic Mathematics",
+        "topic": "Differentiation"
+      },
+      {
+        "date": "2026-06-16",
+        "chapter": "Basic Mathematics",
+        "topic": "Differentiation"
+      },
+      {
+        "date": "2026-06-17",
+        "chapter": "Basic Mathematics",
+        "topic": "Integration"
+      },
+      {
+        "date": "2026-06-18",
+        "chapter": "Basic Mathematics",
+        "topic": "Integration"
+      },
+      {
+        "date": "2026-06-22",
+        "chapter": "Vectors",
+        "topic": "Definition & type of vector, angle between vectors"
+      },
+      {
+        "date": "2026-06-23",
+        "chapter": "Vectors",
+        "topic": "Addition of vectors, including both laws"
+      },
+      {
+        "date": "2026-06-24",
+        "chapter": "Vectors",
+        "topic": "Subtraction of vector & question practice"
+      },
+      {
+        "date": "2026-06-25",
+        "chapter": "Vectors",
+        "topic": "Polygon rule of vector addition"
+      },
+      {
+        "date": "2026-06-26",
+        "chapter": "Vectors",
+        "topic": "Component of vector, unit vector & representation"
+      },
+      {
+        "date": "2026-06-29",
+        "chapter": "Vectors",
+        "topic": "General representation of a vector in 2D & 3D, Position"
+      },
+      {
+        "date": "2026-06-30",
+        "chapter": "Vectors",
+        "topic": "Vector, displacement, average velocity"
+      },
+      {
+        "date": "2026-07-01",
+        "chapter": "Vectors",
+        "topic": "Scalar product and its application"
+      },
+      {
+        "date": "2026-07-02",
+        "chapter": "Vectors",
+        "topic": "Scalar product and its application"
+      },
+      {
+        "date": "2026-07-03",
+        "chapter": "Units and Dimension",
+        "topic": "Introduction"
+      },
+      {
+        "date": "2026-07-06",
+        "chapter": "Units and Dimension",
+        "topic": "Physical Quantities, System of Units"
+      },
+      {
+        "date": "2026-07-07",
+        "chapter": "Units and Dimension",
+        "topic": "Dimensions of Physical Quantities"
+      },
+      {
+        "date": "2026-07-08",
+        "chapter": "Units and Dimension",
+        "topic": "Dimensional Constants, Dimensional Variables"
+      },
+      {
+        "date": "2026-07-09",
+        "chapter": "Units and Dimension",
+        "topic": "Dimensional Analysis and its Applications"
+      },
+      {
+        "date": "2026-07-10",
+        "chapter": "Motion in a Straight Line",
+        "topic": "Introduction"
+      },
+      {
+        "date": "2026-07-13",
+        "chapter": "Motion in a Straight Line",
+        "topic": "Concept of position, path length (distance), displacement"
+      },
+      {
+        "date": "2026-07-14",
+        "chapter": "Motion in a Straight Line",
+        "topic": "Speed"
+      },
+      {
+        "date": "2026-07-15",
+        "chapter": "Motion in a Straight Line",
+        "topic": "Velocity"
+      },
+      {
+        "date": "2026-07-16",
+        "chapter": "Motion in a Straight Line",
+        "topic": "Velocity"
+      },
+      {
+        "date": "2026-07-17",
+        "chapter": "Motion in a Straight Line",
+        "topic": "Acceleration"
+      },
+      {
+        "date": "2026-07-20",
+        "chapter": "Motion in a Straight Line",
+        "topic": "Acceleration"
+      },
+      {
+        "date": "2026-07-21",
+        "chapter": "Motion in a Straight Line",
+        "topic": "Graphs"
+      },
+      {
+        "date": "2026-07-22",
+        "chapter": "Motion in a Straight Line",
+        "topic": "Graphs"
+      },
+      {
+        "date": "2026-07-23",
+        "chapter": "Motion in a Straight Line",
+        "topic": "Motion with constant acceleration"
+      },
+      {
+        "date": "2026-07-24",
+        "chapter": "Motion in a Straight Line",
+        "topic": "Motion with variable acceleration"
+      },
+      {
+        "date": "2026-07-27",
+        "chapter": "Motion in a Straight Line",
+        "topic": "Motion with variable acceleration"
+      },
+      {
+        "date": "2026-07-28",
+        "chapter": "Motion in a Plane",
+        "topic": "Projectile Motion"
+      },
+      {
+        "date": "2026-07-29",
+        "chapter": "Motion in a Plane",
+        "topic": "Projectile Motion"
+      },
+      {
+        "date": "2026-07-30",
+        "chapter": "Motion in a Plane",
+        "topic": "Projectile Motion"
+      },
+      {
+        "date": "2026-07-31",
+        "chapter": "Motion in a Plane",
+        "topic": "Projectile Motion"
+      },
+      {
+        "date": "2026-08-03",
+        "chapter": "Motion in a Plane",
+        "topic": "Relative Motion"
+      },
+      {
+        "date": "2026-08-04",
+        "chapter": "Motion in a Plane",
+        "topic": "Relative Motion"
+      },
+      {
+        "date": "2026-08-05",
+        "chapter": "Motion in a Plane",
+        "topic": "Relative Motion"
+      },
+      {
+        "date": "2026-08-06",
+        "chapter": "Motion in a Plane",
+        "topic": "Rain-River Boat"
+      },
+      {
+        "date": "2026-08-07",
+        "chapter": "Motion in a Plane",
+        "topic": "Rain-River Boat"
+      },
+      {
+        "date": "2026-08-10",
+        "chapter": "Motion in a Plane",
+        "topic": "Rain-River Boat"
+      },
+      {
+        "date": "2026-08-11",
+        "chapter": "Laws of Motion",
+        "topic": "Laws & types of force"
+      },
+      {
+        "date": "2026-08-12",
+        "chapter": "Laws of Motion",
+        "topic": "F.B.D. & Application of NLM"
+      },
+      {
+        "date": "2026-08-13",
+        "chapter": "Laws of Motion",
+        "topic": "F.B.D. & Application of NLM"
+      },
+      {
+        "date": "2026-08-14",
+        "chapter": "Laws of Motion",
+        "topic": "Atwood machine (pulley related), two or more blocks in contact"
+      },
+      {
+        "date": "2026-08-17",
+        "chapter": "Laws of Motion",
+        "topic": "Elevator problems & spring problem/simple"
+      },
+      {
+        "date": "2026-08-18",
+        "chapter": "Laws of Motion",
+        "topic": "Cutting of spring"
+      },
+      {
+        "date": "2026-08-19",
+        "chapter": "Laws of Motion",
+        "topic": "Pseudo force"
+      },
+      {
+        "date": "2026-08-20",
+        "chapter": "Laws of Motion",
+        "topic": "Constraint motion"
+      },
+      {
+        "date": "2026-08-21",
+        "chapter": "Friction",
+        "topic": "Introduction, static & kinetic friction"
+      },
+      {
+        "date": "2026-08-24",
+        "chapter": "Friction",
+        "topic": "Single block horizontal surface & inclined plane"
+      },
+      {
+        "date": "2026-08-25",
+        "chapter": "Friction",
+        "topic": "Angle of repose, net contact force & angle of friction"
+      },
+      {
+        "date": "2026-08-29",
+        "chapter": "Friction",
+        "topic": "Two block problems"
+      },
+      {
+        "date": "2026-08-31",
+        "chapter": "Circular Motion",
+        "topic": "Centripetal Acceleration"
+      },
+      {
+        "date": "2026-09-01",
+        "chapter": "Circular Motion",
+        "topic": "Tangential Acceleration"
+      },
+      {
+        "date": "2026-09-04",
+        "chapter": "Circular Motion",
+        "topic": "Dynamics of Circular Motion"
+      },
+      {
+        "date": "2026-09-05",
+        "chapter": "Circular Motion",
+        "topic": "Banking of Road, Conical pendulum"
+      },
+      {
+        "date": "2026-09-07",
+        "chapter": "Circular Motion",
+        "topic": "Banking of Road, Conical pendulum"
+      },
+      {
+        "date": "2026-09-08",
+        "chapter": "Circular Motion",
+        "topic": "Banking of Road, Conical pendulum"
+      },
+      {
+        "date": "2026-09-11",
+        "chapter": "Work, Energy and Power",
+        "topic": "Work Basics"
+      },
+      {
+        "date": "2026-09-12",
+        "chapter": "Work, Energy and Power",
+        "topic": "Work Done by Variable Force"
+      },
+      {
+        "date": "2026-09-14",
+        "chapter": "Work, Energy and Power",
+        "topic": "Kinetic Energy & Work Energy Theorem"
+      },
+      {
+        "date": "2026-09-15",
+        "chapter": "Work, Energy and Power",
+        "topic": "Potential Energy"
+      },
+      {
+        "date": "2026-09-18",
+        "chapter": "Work, Energy and Power",
+        "topic": "Conservative Forces & Energy"
+      },
+      {
+        "date": "2026-09-19",
+        "chapter": "Work, Energy and Power",
+        "topic": "Applications of Energy Conservation"
+      },
+      {
+        "date": "2026-09-21",
+        "chapter": "Work, Energy and Power",
+        "topic": "Power"
+      },
+      {
+        "date": "2026-09-22",
+        "chapter": "Work, Energy and Power",
+        "topic": "Collisions"
+      },
+      {
+        "date": "2026-09-25",
+        "chapter": "Work, Energy and Power",
+        "topic": "Vertical Circular Motion"
+      },
+      {
+        "date": "2026-09-26",
+        "chapter": "Centre of Mass & System of Particles",
+        "topic": "System of Particles Basics"
+      },
+      {
+        "date": "2026-09-28",
+        "chapter": "Centre of Mass & System of Particles",
+        "topic": "Centre of Mass Basics"
+      },
+      {
+        "date": "2026-09-29",
+        "chapter": "Centre of Mass & System of Particles",
+        "topic": "COM Calculation (Discrete System)"
+      },
+      {
+        "date": "2026-10-03",
+        "chapter": "Centre of Mass & System of Particles",
+        "topic": "COM of Continuous Body"
+      },
+      {
+        "date": "2026-10-05",
+        "chapter": "Centre of Mass & System of Particles",
+        "topic": "Standard COM Results"
+      },
+      {
+        "date": "2026-10-06",
+        "chapter": "Centre of Mass & System of Particles",
+        "topic": "COM by Integration"
+      },
+      {
+        "date": "2026-10-09",
+        "chapter": "Centre of Mass & System of Particles",
+        "topic": "Motion of Centre of Mass"
+      },
+      {
+        "date": "2026-10-10",
+        "chapter": "Centre of Mass & System of Particles",
+        "topic": "Momentum of System"
+      },
+      {
+        "date": "2026-10-12",
+        "chapter": "Centre of Mass & System of Particles",
+        "topic": "Impulse"
+      },
+      {
+        "date": "2026-10-13",
+        "chapter": "Centre of Mass & System of Particles",
+        "topic": "Collision Basics"
+      },
+      {
+        "date": "2026-10-16",
+        "chapter": "Centre of Mass & System of Particles",
+        "topic": "1D Collision"
+      },
+      {
+        "date": "2026-10-17",
+        "chapter": "Centre of Mass & System of Particles",
+        "topic": "Coefficient of Restitution"
+      },
+      {
+        "date": "2026-10-19",
+        "chapter": "Centre of Mass & System of Particles",
+        "topic": "2D Collision"
+      },
+      {
+        "date": "2026-10-23",
+        "chapter": "Centre of Mass & System of Particles",
+        "topic": "Advanced COM Applications"
+      },
+      {
+        "date": "2026-10-24",
+        "chapter": "Rotational Motion",
+        "topic": "Rotational Kinematics"
+      },
+      {
+        "date": "2026-10-26",
+        "chapter": "Rotational Motion",
+        "topic": "Rotational Kinematics"
+      },
+      {
+        "date": "2026-10-27",
+        "chapter": "Rotational Motion",
+        "topic": "Moment of Inertia"
+      },
+      {
+        "date": "2026-10-30",
+        "chapter": "Rotational Motion",
+        "topic": "Moment of Inertia"
+      },
+      {
+        "date": "2026-10-31",
+        "chapter": "Rotational Motion",
+        "topic": "Moment of Inertia"
+      },
+      {
+        "date": "2026-11-02",
+        "chapter": "Rotational Motion",
+        "topic": "Moment of Inertia"
+      },
+      {
+        "date": "2026-11-03",
+        "chapter": "Rotational Motion",
+        "topic": "Torque"
+      },
+      {
+        "date": "2026-11-10",
+        "chapter": "Rotational Motion",
+        "topic": "Kinetic Energy"
+      },
+      {
+        "date": "2026-11-13",
+        "chapter": "Rotational Motion",
+        "topic": "Fixed axis rotation"
+      },
+      {
+        "date": "2026-11-14",
+        "chapter": "Rotational Motion",
+        "topic": "Angular momentum"
+      },
+      {
+        "date": "2026-11-17",
+        "chapter": "Rotational Motion",
+        "topic": "Combined rotation and translation"
+      },
+      {
+        "date": "2026-11-20",
+        "chapter": "Rotational Motion",
+        "topic": "Combined rotation and translation"
+      },
+      {
+        "date": "2026-11-21",
+        "chapter": "Rotational Motion",
+        "topic": "Impulsive torque"
+      },
+      {
+        "date": "2026-11-23",
+        "chapter": "Rotational Motion",
+        "topic": "Toppling"
+      },
+      {
+        "date": "2026-11-24",
+        "chapter": "Rotational Motion",
+        "topic": "Toppling"
+      },
+      {
+        "date": "2026-11-27",
+        "chapter": "Gravitation",
+        "topic": "Force/Field/Potential/Energy, Variation of g"
+      },
+      {
+        "date": "2026-11-28",
+        "chapter": "Gravitation",
+        "topic": "Force/Field/Potential Energy, Variation of g"
+      },
+      {
+        "date": "2026-11-30",
+        "chapter": "Gravitation",
+        "topic": "Escape velocity"
+      },
+      {
+        "date": "2026-12-01",
+        "chapter": "Gravitation",
+        "topic": "Circular orbits, Kepler's laws (brief statements)"
+      },
+      {
+        "date": "2026-12-04",
+        "chapter": "Gravitation",
+        "topic": "Circular orbits, Kepler's laws (brief statements)"
+      },
+      {
+        "date": "2026-12-05",
+        "chapter": "Thermal Properties of Matter",
+        "topic": "Thermal Expansion"
+      },
+      {
+        "date": "2026-12-07",
+        "chapter": "Thermal Properties of Matter",
+        "topic": "Thermal Expansion"
+      },
+      {
+        "date": "2026-12-08",
+        "chapter": "Thermal Properties of Matter",
+        "topic": "Calorimetry"
+      },
+      {
+        "date": "2026-12-11",
+        "chapter": "Thermal Properties of Matter",
+        "topic": "Calorimetry"
+      },
+      {
+        "date": "2026-12-12",
+        "chapter": "Thermal Properties of Matter",
+        "topic": "Heat Transfer"
+      },
+      {
+        "date": "2026-12-14",
+        "chapter": "Thermal Properties of Matter",
+        "topic": "Conduction"
+      },
+      {
+        "date": "2026-12-15",
+        "chapter": "Thermal Properties of Matter",
+        "topic": "Heat Transfer"
+      },
+      {
+        "date": "2026-12-18",
+        "chapter": "Thermal Properties of Matter",
+        "topic": "Conduction"
+      },
+      {
+        "date": "2026-12-19",
+        "chapter": "Thermal Properties of Matter",
+        "topic": "Heat Transfer (Radiation)"
+      },
+      {
+        "date": "2026-12-21",
+        "chapter": "Thermal Properties of Matter",
+        "topic": "Heat Transfer (Radiation)"
+      },
+      {
+        "date": "2026-12-22",
+        "chapter": "Mechanical Properties of Solids",
+        "topic": "Introduction, Stress and Strain, Hooke's Law, Stress-strain Curve, Elastic Moduli"
+      },
+      {
+        "date": "2026-12-26",
+        "chapter": "Mechanical Properties of Solids",
+        "topic": "Elastic Moduli, Elasticity Coefficients"
+      },
+      {
+        "date": "2026-12-28",
+        "chapter": "Mechanical Properties of Fluids",
+        "topic": "Elastic behaviour of materials, pressure, variation of pressure with height"
+      },
+      {
+        "date": "2026-12-29",
+        "chapter": "Mechanical Properties of Fluids",
+        "topic": "Elastic behaviour of materials, pressure, variation of pressure with height"
+      },
+      {
+        "date": "2027-01-02",
+        "chapter": "Mechanical Properties of Fluids",
+        "topic": "Torricelli's experiment, Pascal Law, Archimedes Principle"
+      },
+      {
+        "date": "2027-01-04",
+        "chapter": "Mechanical Properties of Fluids",
+        "topic": "Elastic behaviour of materials, pressure, variation of pressure with height"
+      },
+      {
+        "date": "2027-01-05",
+        "chapter": "Mechanical Properties of Fluids",
+        "topic": "Variation of pressure inside liquid in accelerated containers"
+      },
+      {
+        "date": "2027-01-08",
+        "chapter": "Mechanical Properties of Fluids",
+        "topic": "Shape of free surface of liquid in rotating container"
+      },
+      {
+        "date": "2027-01-09",
+        "chapter": "Mechanical Properties of Fluids",
+        "topic": "Torricelli's experiment"
+      },
+      {
+        "date": "2027-01-11",
+        "chapter": "Mechanical Properties of Fluids",
+        "topic": "Pascal Law"
+      },
+      {
+        "date": "2027-01-12",
+        "chapter": "Mechanical Properties of Fluids",
+        "topic": "Archimedes Principle"
+      },
+      {
+        "date": "2027-01-15",
+        "chapter": "Mechanical Properties of Fluids",
+        "topic": "Streamline Flow"
+      },
+      {
+        "date": "2027-01-16",
+        "chapter": "Mechanical Properties of Fluids",
+        "topic": "Bernoulli's Principle (Applications), Surface Tension"
+      },
+      {
+        "date": "2027-01-25",
+        "chapter": "Oscillations",
+        "topic": "Definitions"
+      },
+      {
+        "date": "2027-01-27",
+        "chapter": "Oscillations",
+        "topic": "Equation of S.H.M. & Introduction of Planar Motion"
+      },
+      {
+        "date": "2027-01-28",
+        "chapter": "Oscillations",
+        "topic": "Energy in S.H.M. & Application of Planar Motion"
+      },
+      {
+        "date": "2027-01-29",
+        "chapter": "Oscillations",
+        "topic": "Dynamics of S.H.M. & finding time period"
+      },
+      {
+        "date": "2027-01-30",
+        "chapter": "Oscillations",
+        "topic": "Spring block system & incomplete S.H.M"
+      },
+      {
+        "date": "2027-02-01",
+        "chapter": "Oscillations",
+        "topic": "Simple pendulum & Compound pendulum"
+      },
+      {
+        "date": "2027-02-02",
+        "chapter": "Oscillations",
+        "topic": "Torsional pendulum & Coupled oscillation"
+      },
+      {
+        "date": "2027-02-03",
+        "chapter": "Waves",
+        "topic": "Travelling Waves"
+      },
+      {
+        "date": "2027-02-04",
+        "chapter": "Waves",
+        "topic": "Wave function"
+      },
+      {
+        "date": "2027-02-05",
+        "chapter": "Waves",
+        "topic": "Superposition and interference"
+      },
+      {
+        "date": "2027-02-06",
+        "chapter": "Waves",
+        "topic": "Superposition & Reflection"
+      },
+      {
+        "date": "2027-02-08",
+        "chapter": "Waves",
+        "topic": "Standing Waves"
+      },
+      {
+        "date": "2027-02-09",
+        "chapter": "Waves",
+        "topic": "Standing Waves"
+      },
+      {
+        "date": "2027-02-10",
+        "chapter": "Errors and Measurements",
+        "topic": "Vernier Calliper, Screw gauge"
+      }
+    ],
+    "chemistry": [
+      {
+        "date": "2026-06-06",
+        "chapter": "Some Basic Concepts of Chemistry",
+        "topic": "Introduction, Matter and its Classification, amu, RAM, 1st 30 elements"
+      },
+      {
+        "date": "2026-06-13",
+        "chapter": "Some Basic Concepts of Chemistry",
+        "topic": "Basics of Ideal Gas Equation, STP/NTP, Y-Map"
+      },
+      {
+        "date": "2026-06-15",
+        "chapter": "Some Basic Concepts of Chemistry",
+        "topic": "Law of Chemical Combination: Conservation of Mass, Constant/Multiple/Reciprocal Proportions"
+      },
+      {
+        "date": "2026-06-16",
+        "chapter": "Some Basic Concepts of Chemistry",
+        "topic": "Percentage Composition, Empirical and Molecular Formula"
+      },
+      {
+        "date": "2026-06-20",
+        "chapter": "Some Basic Concepts of Chemistry",
+        "topic": "Laws of Chemical Combination, Mole, Vapour density, Atomicity, Mole Concept"
+      },
+      {
+        "date": "2026-06-26",
+        "chapter": "Some Basic Concepts of Chemistry",
+        "topic": "Molecular Mass, Gram Molecular Mass, Average Molecular Mass, Formula Mass"
+      },
+      {
+        "date": "2026-06-27",
+        "chapter": "Some Basic Concepts of Chemistry",
+        "topic": "Percentage Composition, Empirical and Molecular Formula, Mole Concept"
+      },
+      {
+        "date": "2026-07-03",
+        "chapter": "Some Basic Concepts of Chemistry",
+        "topic": "Y-Map, Stoichiometry: Interpretation of Balanced Equation"
+      },
+      {
+        "date": "2026-07-04",
+        "chapter": "Some Basic Concepts of Chemistry",
+        "topic": "Stoichiometric Calculations (Mass-Mass, Mass-Volume, Mole-Mole)"
+      },
+      {
+        "date": "2026-07-10",
+        "chapter": "Some Basic Concepts of Chemistry",
+        "topic": "Limiting Reagent, Percentage Yield/Purity, POAC, Concentration Terms"
+      },
+      {
+        "date": "2026-07-11",
+        "chapter": "Structure of Atom",
+        "topic": "Introduction, Discovery of Subatomic Particles"
+      },
+      {
+        "date": "2026-07-17",
+        "chapter": "Structure of Atom",
+        "topic": "Atomic Models, Nature of Light, Planck's Quantum Theory"
+      },
+      {
+        "date": "2026-07-18",
+        "chapter": "Structure of Atom",
+        "topic": "Photoelectric Effect, Bohr Model (Radius, Velocity, Energy)"
+      },
+      {
+        "date": "2026-07-24",
+        "chapter": "Structure of Atom",
+        "topic": "Ionization Energy/Potential, Excitation Energy, Spectrum Classification"
+      },
+      {
+        "date": "2026-07-25",
+        "chapter": "Structure of Atom",
+        "topic": "Hydrogen Spectrum, Rydberg Equation, De Broglie, Heisenberg Uncertainty"
+      },
+      {
+        "date": "2026-07-31",
+        "chapter": "Structure of Atom",
+        "topic": "Wave Mechanical Model, Orbit/Orbital, Schr\u00f6dinger Equation, Quantum Numbers"
+      },
+      {
+        "date": "2026-08-01",
+        "chapter": "Structure of Atom",
+        "topic": "Aufbau, Pauli, Hund's Rule, Electronic Configuration, Magnetic Properties"
+      },
+      {
+        "date": "2026-08-07",
+        "chapter": "Structure of Atom",
+        "topic": "Radial/Angular Probability Distribution, Nodes"
+      },
+      {
+        "date": "2026-08-08",
+        "chapter": "Classification of Elements and Periodicity",
+        "topic": "Need for Classification, Historical Development, Magic Numbers"
+      },
+      {
+        "date": "2026-08-14",
+        "chapter": "Classification of Elements and Periodicity",
+        "topic": "Modern Periodic Law, Long Form vs Mendeleev's Table"
+      },
+      {
+        "date": "2026-08-21",
+        "chapter": "Classification of Elements and Periodicity",
+        "topic": "Electronic Configuration and Periodic Table"
+      },
+      {
+        "date": "2026-08-22",
+        "chapter": "Classification of Elements and Periodicity",
+        "topic": "s,p,d,f Block Division and Characteristics"
+      },
+      {
+        "date": "2026-08-26",
+        "chapter": "Classification of Elements and Periodicity",
+        "topic": "Metals/Nonmetals/Metalloids, Diagonal Relationship, Bridge Elements"
+      },
+      {
+        "date": "2026-08-27",
+        "chapter": "Classification of Elements and Periodicity",
+        "topic": "Periodic Properties, Screening Effect, Effective Nuclear Charge"
+      },
+      {
+        "date": "2026-08-29",
+        "chapter": "Classification of Elements and Periodicity",
+        "topic": "Periodic Trends in Physical Properties"
+      },
+      {
+        "date": "2026-09-02",
+        "chapter": "Classification of Elements and Periodicity",
+        "topic": "Electronegativity Scales and Factors"
+      },
+      {
+        "date": "2026-09-03",
+        "chapter": "Classification of Elements and Periodicity",
+        "topic": "Periodicity in Electronegativity, Oxides"
+      },
+      {
+        "date": "2026-09-04",
+        "chapter": "Chemical Bonding and Molecular Structure",
+        "topic": "Introduction, Ionic/Electrovalent Bond, Lattice Energy"
+      },
+      {
+        "date": "2026-09-05",
+        "chapter": "Chemical Bonding and Molecular Structure",
+        "topic": "Factors Favouring Ionic Bonding, Solubility Trends"
+      },
+      {
+        "date": "2026-09-09",
+        "chapter": "Chemical Bonding and Molecular Structure",
+        "topic": "K\u00f6ssel-Lewis Approach"
+      },
+      {
+        "date": "2026-09-10",
+        "chapter": "Chemical Bonding and Molecular Structure",
+        "topic": "Resonating Structure, Resonance Energy"
+      },
+      {
+        "date": "2026-09-11",
+        "chapter": "Chemical Bonding and Molecular Structure",
+        "topic": "Valence Shell Electron Pair Repulsion (VSEPR) Theory"
+      },
+      {
+        "date": "2026-09-12",
+        "chapter": "Chemical Bonding and Molecular Structure",
+        "topic": "Valence Bond Theory (VBT)"
+      },
+      {
+        "date": "2026-09-16",
+        "chapter": "Chemical Bonding and Molecular Structure",
+        "topic": "VSEPR Theory"
+      },
+      {
+        "date": "2026-09-17",
+        "chapter": "Chemical Bonding and Molecular Structure",
+        "topic": "Hybridisation"
+      },
+      {
+        "date": "2026-09-18",
+        "chapter": "Chemical Bonding and Molecular Structure",
+        "topic": "Determination of Number of pi Bonds"
+      },
+      {
+        "date": "2026-09-19",
+        "chapter": "Chemical Bonding and Molecular Structure",
+        "topic": "Dipole Moment, Polarisability, Fajan's Rule, Polarity"
+      },
+      {
+        "date": "2026-09-23",
+        "chapter": "Chemical Bonding and Molecular Structure",
+        "topic": "Linear Combination of Atomic Orbitals (LCAO)"
+      },
+      {
+        "date": "2026-09-24",
+        "chapter": "Chemical Bonding and Molecular Structure",
+        "topic": "Molecular Orbital Theory (MOT)"
+      },
+      {
+        "date": "2026-09-25",
+        "chapter": "Chemical Bonding and Molecular Structure",
+        "topic": "Shapes of Molecular Orbitals, Bond Enthalpy"
+      },
+      {
+        "date": "2026-09-26",
+        "chapter": "Chemical Bonding and Molecular Structure",
+        "topic": "Bond Parameters, Hydrogen Bonds, Intermolecular Forces, Back Bonding"
+      },
+      {
+        "date": "2026-09-30",
+        "chapter": "Some Basic principles and Techniques (IUPAC Naming)",
+        "topic": "Tetravalency of carbon, hybridization, sigma & pi bonds"
+      },
+      {
+        "date": "2026-10-01",
+        "chapter": "Some Basic principles and Techniques (IUPAC Naming)",
+        "topic": "Classification by functional groups, halogens/O/N/S, homologous series"
+      },
+      {
+        "date": "2026-10-03",
+        "chapter": "Some Basic principles and Techniques (IUPAC Naming)",
+        "topic": "Degree of Carbon/Hydrogen/Alcohol/Amine, Degree of Unsaturation"
+      },
+      {
+        "date": "2026-10-07",
+        "chapter": "Some Basic principles and Techniques (IUPAC Naming)",
+        "topic": "IUPAC of Hydrocarbons & Cycloalkanes"
+      },
+      {
+        "date": "2026-10-08",
+        "chapter": "Some Basic principles and Techniques (IUPAC Naming)",
+        "topic": "IUPAC of Functional/Polyfunctional Groups, Aromatic Compounds"
+      },
+      {
+        "date": "2026-10-09",
+        "chapter": "Some Basic principles and Techniques (IUPAC Naming)",
+        "topic": "IUPAC Naming of Bicyclo & Spiro Compounds, PYQs"
+      },
+      {
+        "date": "2026-10-10",
+        "chapter": "State of matter",
+        "topic": "The Gaseous State"
+      },
+      {
+        "date": "2026-10-14",
+        "chapter": "State of matter",
+        "topic": "The Gas Laws"
+      },
+      {
+        "date": "2026-10-15",
+        "chapter": "State of matter",
+        "topic": "Ideal Gas Equation, Dalton's Law, Graham's Law"
+      },
+      {
+        "date": "2026-10-16",
+        "chapter": "State of matter",
+        "topic": "Kinetic Molecular Theory, Kinetic Gas Equation, KE and Molecular Speeds"
+      },
+      {
+        "date": "2026-10-17",
+        "chapter": "State of matter",
+        "topic": "Maxwell-Boltzmann Distribution, Real Gas Deviation"
+      },
+      {
+        "date": "2026-10-21",
+        "chapter": "State of matter",
+        "topic": "Van der Waals Equation, Liquefaction of Gases, Eudiometry"
+      },
+      {
+        "date": "2026-10-22",
+        "chapter": "Thermodynamics",
+        "topic": "Introduction, Basic Terms, Classification of System, State of System"
+      },
+      {
+        "date": "2026-10-23",
+        "chapter": "Thermodynamics",
+        "topic": "Types of Properties, Types of Thermodynamic Processes"
+      },
+      {
+        "date": "2026-10-24",
+        "chapter": "Thermodynamics",
+        "topic": "Work, Heat and Internal Energy, First Law, Enthalpy, Heat Capacity"
+      },
+      {
+        "date": "2026-10-28",
+        "chapter": "Thermodynamics",
+        "topic": "Calculation of q,w,\u0394U,\u0394H, Thermochemistry, Laws of Thermochemistry"
+      },
+      {
+        "date": "2026-10-29",
+        "chapter": "Thermodynamics",
+        "topic": "Enthalpy Change Types, Spontaneous Process, Entropy, Second Law"
+      },
+      {
+        "date": "2026-10-30",
+        "chapter": "Thermodynamics",
+        "topic": "Entropy Change of Solids/Liquids upon Heating"
+      },
+      {
+        "date": "2026-10-31",
+        "chapter": "Thermodynamics",
+        "topic": "Standard Absolute Molar Entropy, Comparing Entropies"
+      },
+      {
+        "date": "2026-11-04",
+        "chapter": "Thermodynamics",
+        "topic": "Entropy Change of a Chemical Reaction, Gibbs Free Energy"
+      },
+      {
+        "date": "2026-11-05",
+        "chapter": "Redox Reaction",
+        "topic": "Introduction"
+      },
+      {
+        "date": "2026-11-12",
+        "chapter": "Redox Reaction",
+        "topic": "Balancing Redox Reactions, Types of Redox Reaction"
+      },
+      {
+        "date": "2026-11-13",
+        "chapter": "Redox Reaction",
+        "topic": "Concept of n-Factor, Valency Factor, Law of Equivalence"
+      },
+      {
+        "date": "2026-11-14",
+        "chapter": "Chemical Equilibrium",
+        "topic": "Types of Chemical Reactions, Active Mass, Equilibrium Characteristics"
+      },
+      {
+        "date": "2026-11-18",
+        "chapter": "Chemical Equilibrium",
+        "topic": "Types of Equilibria, Law of Mass Action, Kp & Kc Relation"
+      },
+      {
+        "date": "2026-11-19",
+        "chapter": "Chemical Equilibrium",
+        "topic": "Factors Affecting Equilibrium Constant and Application"
+      },
+      {
+        "date": "2026-11-20",
+        "chapter": "Chemical Equilibrium",
+        "topic": "Degree of Dissociation, Mixed Concept Numericals"
+      },
+      {
+        "date": "2026-11-21",
+        "chapter": "Chemical Equilibrium",
+        "topic": "Le Chatelier's Principle, Simultaneous Equilibrium"
+      },
+      {
+        "date": "2026-11-25",
+        "chapter": "Ionic Equilibrium",
+        "topic": "Type of Electrolytes"
+      },
+      {
+        "date": "2026-11-26",
+        "chapter": "Ionic Equilibrium",
+        "topic": "Acid/Base Theories, Autoionization of Water"
+      },
+      {
+        "date": "2026-11-27",
+        "chapter": "Ionic Equilibrium",
+        "topic": "The pH-Scale, Ionisation of Weak Electrolyte"
+      },
+      {
+        "date": "2026-11-28",
+        "chapter": "Ionic Equilibrium",
+        "topic": "Common Ion Effect and Levelling Effect"
+      },
+      {
+        "date": "2026-12-02",
+        "chapter": "Ionic Equilibrium",
+        "topic": "pH Calculation"
+      },
+      {
+        "date": "2026-12-03",
+        "chapter": "Ionic Equilibrium",
+        "topic": "Buffer Solution, Salt Hydrolysis"
+      },
+      {
+        "date": "2026-12-04",
+        "chapter": "Ionic Equilibrium",
+        "topic": "Indicator, Acid-base Titration, Solubility Product"
+      },
+      {
+        "date": "2026-12-05",
+        "chapter": "Some Basic principles and Techniques (Isomerism)",
+        "topic": "Isomerism & Types, Structural Isomerism (Chain and Position)"
+      },
+      {
+        "date": "2026-12-09",
+        "chapter": "Some Basic principles and Techniques (Isomerism)",
+        "topic": "Structural Isomerism (Metamers, Functional)"
+      },
+      {
+        "date": "2026-12-10",
+        "chapter": "Some Basic principles and Techniques (Isomerism)",
+        "topic": "Tautomerism"
+      },
+      {
+        "date": "2026-12-11",
+        "chapter": "Some Basic principles and Techniques (Isomerism)",
+        "topic": "Calculation of Structural Isomerism-1"
+      },
+      {
+        "date": "2026-12-12",
+        "chapter": "Some Basic principles and Techniques (Isomerism)",
+        "topic": "Calculation of Structural Isomerism-2"
+      },
+      {
+        "date": "2026-12-16",
+        "chapter": "Some Basic principles and Techniques (Isomerism)",
+        "topic": "Geometrical Isomerism & Exhibition"
+      },
+      {
+        "date": "2026-12-17",
+        "chapter": "Some Basic principles and Techniques (Isomerism)",
+        "topic": "Cis-trans & Physical Property, Z/E, CIP Rule"
+      },
+      {
+        "date": "2026-12-18",
+        "chapter": "Some Basic principles and Techniques (Isomerism)",
+        "topic": "Special Cases of G.I. and Calculation"
+      },
+      {
+        "date": "2026-12-19",
+        "chapter": "Some Basic principles and Techniques (Isomerism)",
+        "topic": "Conformations, Optical Isomerism, Chiral Centre, PYQs"
+      },
+      {
+        "date": "2026-12-23",
+        "chapter": "Some Basic principles and Techniques (GOC)",
+        "topic": "Covalent bond fission - Homolytic/Heterolytic, Inductive Effect"
+      },
+      {
+        "date": "2026-12-24",
+        "chapter": "Some Basic principles and Techniques (GOC)",
+        "topic": "Positive/Negative Inductive Effect and Application"
+      },
+      {
+        "date": "2026-12-26",
+        "chapter": "Some Basic principles and Techniques (GOC)",
+        "topic": "Hyperconjugation, Application of Hyperconjugation"
+      },
+      {
+        "date": "2026-12-30",
+        "chapter": "Some Basic principles and Techniques (GOC)",
+        "topic": "Resonance (Part-1)"
+      },
+      {
+        "date": "2026-12-31",
+        "chapter": "Some Basic principles and Techniques (GOC)",
+        "topic": "Resonance (Part-2), Stability of Resonating Structures"
+      },
+      {
+        "date": "2027-01-02",
+        "chapter": "Some Basic principles and Techniques (GOC)",
+        "topic": "Aromaticity, Annulene"
+      },
+      {
+        "date": "2027-01-06",
+        "chapter": "Some Basic principles and Techniques (GOC)",
+        "topic": "Mesomeric Effect, Stability of Intermediates, Bond Length/Strength"
+      },
+      {
+        "date": "2027-01-07",
+        "chapter": "Some Basic principles and Techniques (GOC)",
+        "topic": "Acidic Strength, Basic Strength"
+      },
+      {
+        "date": "2027-01-08",
+        "chapter": "Some Basic principles and Techniques (GOC)",
+        "topic": "Tautomerism, Electrophiles/Nucleophiles, Reaction Types"
+      },
+      {
+        "date": "2027-01-09",
+        "chapter": "Some Basic principles and Techniques (GOC)",
+        "topic": "Purification: Crystallization, Sublimation, Distillation, Chromatography"
+      },
+      {
+        "date": "2027-01-13",
+        "chapter": "Some Basic principles and Techniques (GOC)",
+        "topic": "Qualitative Analysis"
+      },
+      {
+        "date": "2027-01-15",
+        "chapter": "Some Basic principles and Techniques (GOC)",
+        "topic": "PYQs"
+      },
+      {
+        "date": "2027-01-16",
+        "chapter": "Hydrocarbon",
+        "topic": "Method of Preparation of Alkane"
+      },
+      {
+        "date": "2027-01-18",
+        "chapter": "Hydrocarbon",
+        "topic": "Chemical Properties of Alkane: Halogenation, Physical Properties"
+      },
+      {
+        "date": "2027-01-19",
+        "chapter": "Hydrocarbon",
+        "topic": "Method of Preparation of Alkene, Electrophilic Addition (H2, halogens)"
+      },
+      {
+        "date": "2027-01-20",
+        "chapter": "Hydrocarbon",
+        "topic": "Electrophilic Addition: Water, Hydrogen Halides (Markownikoff's, Peroxide)"
+      },
+      {
+        "date": "2027-01-21",
+        "chapter": "Hydrocarbon",
+        "topic": "Ozonolysis and Polymerization"
+      },
+      {
+        "date": "2027-01-22",
+        "chapter": "Hydrocarbon",
+        "topic": "Method of Preparation of Alkyne"
+      },
+      {
+        "date": "2027-01-23",
+        "chapter": "Hydrocarbon",
+        "topic": "Chemical Properties of Alkyne: Acidic Character, Addition, Polymerization"
+      },
+      {
+        "date": "2027-01-25",
+        "chapter": "Hydrocarbon",
+        "topic": "MOP of Benzene, Electrophilic Substitution, Friedel-Crafts, PYQs"
+      },
+      {
+        "date": "2027-01-27",
+        "chapter": "Purification and Analysis of Organic Compound",
+        "topic": "Methods of Purification, Qualitative/Quantitative Analysis, Detection of Elements"
+      },
+      {
+        "date": "2027-01-28",
+        "chapter": "Environmental Chemistry",
+        "topic": "Introduction, Atmospheric/Tropospheric Pollution, Acid Rain, Smog"
+      },
+      {
+        "date": "2027-01-29",
+        "chapter": "Environmental Chemistry",
+        "topic": "Stratospheric/Water/Soil Pollution, Green Chemistry"
+      },
+      {
+        "date": "2027-01-30",
+        "chapter": "P-block Elements (Group 13 and 14)",
+        "topic": "Group 13 Elements, Physical Properties"
+      },
+      {
+        "date": "2027-02-01",
+        "chapter": "P-block Elements (Group 13 and 14)",
+        "topic": "Chemical Properties, Trends and Anomalous Properties of Boron"
+      },
+      {
+        "date": "2027-02-02",
+        "chapter": "P-block Elements (Group 13 and 14)",
+        "topic": "Uses of Boron/Aluminium, Group 14 Elements, Physical Properties"
+      },
+      {
+        "date": "2027-02-03",
+        "chapter": "P-block Elements (Group 13 and 14)",
+        "topic": "Chemical Properties, Trends and Anomalous Behaviour of Carbon"
+      },
+      {
+        "date": "2027-02-04",
+        "chapter": "P-block Elements (Group 13 and 14)",
+        "topic": "Allotropes/Uses of Carbon, Compounds of Carbon and Silicon"
+      },
+      {
+        "date": "2027-02-05",
+        "chapter": "S-block Element",
+        "topic": "Group 1 Elements: Physical/Chemical Properties, Uses"
+      },
+      {
+        "date": "2027-02-06",
+        "chapter": "S-block Element",
+        "topic": "General Characteristics of Alkali Metal Compounds, Anomalous Properties of Lithium"
+      },
+      {
+        "date": "2027-02-08",
+        "chapter": "S-block Element",
+        "topic": "Compounds of Sodium/Potassium, Group 2 Elements Physical Properties"
+      },
+      {
+        "date": "2027-02-09",
+        "chapter": "Hydrogen and its Compound",
+        "topic": "Position in Periodic Table, Isotopes, Preparation of Dihydrogen"
+      },
+      {
+        "date": "2027-02-10",
+        "chapter": "Hydrogen and its Compound",
+        "topic": "Physical/Chemical Properties, Uses, Hydrides, Water & Hardness"
+      }
+    ],
+    "mathematics": [
+      {
+        "date": "2026-06-04",
+        "chapter": "Basic Mathematics",
+        "topic": "Number System"
+      },
+      {
+        "date": "2026-06-08",
+        "chapter": "Basic Mathematics",
+        "topic": "Number System"
+      },
+      {
+        "date": "2026-06-09",
+        "chapter": "Basic Mathematics",
+        "topic": "Wavy Curve Method"
+      },
+      {
+        "date": "2026-06-10",
+        "chapter": "Basic Mathematics",
+        "topic": "Wavy Curve Method"
+      },
+      {
+        "date": "2026-06-11",
+        "chapter": "Basic Mathematics",
+        "topic": "Wavy Curve Method"
+      },
+      {
+        "date": "2026-06-17",
+        "chapter": "Basic Mathematics",
+        "topic": "Wavy Curve Method"
+      },
+      {
+        "date": "2026-06-18",
+        "chapter": "Basic Mathematics",
+        "topic": "Modulus Functions"
+      },
+      {
+        "date": "2026-06-19",
+        "chapter": "Basic Mathematics",
+        "topic": "Modulus Functions"
+      },
+      {
+        "date": "2026-06-22",
+        "chapter": "Basic Mathematics",
+        "topic": "Modulus Inequalities"
+      },
+      {
+        "date": "2026-06-23",
+        "chapter": "Basic Mathematics",
+        "topic": "Modulus Inequalities"
+      },
+      {
+        "date": "2026-06-24",
+        "chapter": "Basic Mathematics",
+        "topic": "Logarithms & their Properties"
+      },
+      {
+        "date": "2026-06-25",
+        "chapter": "Basic Mathematics",
+        "topic": "Logarithms & their Properties"
+      },
+      {
+        "date": "2026-06-28",
+        "chapter": "Basic Mathematics",
+        "topic": "Number System, Wavy Curve, Modulus Functions/Inequalities (Short Test-1)"
+      },
+      {
+        "date": "2026-06-29",
+        "chapter": "Basic Mathematics",
+        "topic": "Logarithms & their Properties"
+      },
+      {
+        "date": "2026-06-30",
+        "chapter": "Basic Mathematics",
+        "topic": "Logarithmic Equations"
+      },
+      {
+        "date": "2026-07-01",
+        "chapter": "Basic Mathematics",
+        "topic": "Logarithmic Inequalities"
+      },
+      {
+        "date": "2026-07-02",
+        "chapter": "Basic Mathematics",
+        "topic": "Logarithmic Inequalities"
+      },
+      {
+        "date": "2026-07-06",
+        "chapter": "Set Theory",
+        "topic": "Types of Sets"
+      },
+      {
+        "date": "2026-07-07",
+        "chapter": "Set Theory",
+        "topic": "Operations on Sets"
+      },
+      {
+        "date": "2026-07-08",
+        "chapter": "Set Theory",
+        "topic": "Algebra of Sets"
+      },
+      {
+        "date": "2026-07-09",
+        "chapter": "Set Theory",
+        "topic": "Algebra of Sets"
+      },
+      {
+        "date": "2026-07-13",
+        "chapter": "Set Theory",
+        "topic": "Geometrical Practical Problems on Union and Intersection of Two Sets"
+      },
+      {
+        "date": "2026-07-14",
+        "chapter": "Set Theory",
+        "topic": "Geometrical Practical Problems on Union and Intersection of Two Sets"
+      },
+      {
+        "date": "2026-07-15",
+        "chapter": "Trigonometric Ratios & Identities",
+        "topic": "Introduction, Ratios for Acute Angle, Basic Identities, Sign Convention"
+      },
+      {
+        "date": "2026-07-16",
+        "chapter": "Trigonometric Ratios & Identities",
+        "topic": "Domain/Range of Trigonometric Functions"
+      },
+      {
+        "date": "2026-07-20",
+        "chapter": "Trigonometric Ratios & Identities",
+        "topic": "Domain/Range of Trigonometric Functions"
+      },
+      {
+        "date": "2026-07-21",
+        "chapter": "Trigonometric Ratios & Identities",
+        "topic": "Allied Angles, Sum and Difference Formulae"
+      },
+      {
+        "date": "2026-07-22",
+        "chapter": "Trigonometric Ratios & Identities",
+        "topic": "Multiple and Submultiple Angles, Standard Angle Ratios"
+      },
+      {
+        "date": "2026-07-23",
+        "chapter": "Trigonometric Ratios & Identities",
+        "topic": "Transformation Formulae, Identities"
+      },
+      {
+        "date": "2026-07-27",
+        "chapter": "Trigonometric Ratios & Identities",
+        "topic": "Maximum/Minimum Value of Series"
+      },
+      {
+        "date": "2026-07-28",
+        "chapter": "Trigonometric Ratios & Identities",
+        "topic": "Maximum/Minimum Value of Series"
+      },
+      {
+        "date": "2026-07-29",
+        "chapter": "Trigonometric Ratios & Identities",
+        "topic": "Maximum/Minimum Value of Series"
+      },
+      {
+        "date": "2026-07-30",
+        "chapter": "Trigonometric Ratios & Identities",
+        "topic": "Maximum/Minimum Value of Series"
+      },
+      {
+        "date": "2026-08-03",
+        "chapter": "Trigonometric Ratios & Identities",
+        "topic": "Maximum/Minimum Value of Series"
+      },
+      {
+        "date": "2026-08-04",
+        "chapter": "Trigonometric Equations",
+        "topic": "Introduction, Solution"
+      },
+      {
+        "date": "2026-08-05",
+        "chapter": "Trigonometric Equations",
+        "topic": "Solution"
+      },
+      {
+        "date": "2026-08-06",
+        "chapter": "Trigonometric Equations",
+        "topic": "Type of Trigonometric Equation"
+      },
+      {
+        "date": "2026-08-10",
+        "chapter": "Trigonometric Equations",
+        "topic": "Type of Trigonometric Equation"
+      },
+      {
+        "date": "2026-08-11",
+        "chapter": "Trigonometric Equations",
+        "topic": "Type of Trigonometric Equation"
+      },
+      {
+        "date": "2026-08-12",
+        "chapter": "Trigonometric Equations",
+        "topic": "Type of Trigonometric Equation"
+      },
+      {
+        "date": "2026-08-13",
+        "chapter": "Trigonometric Equations",
+        "topic": "Type of Trigonometric Equation"
+      },
+      {
+        "date": "2026-08-17",
+        "chapter": "Trigonometric Equations",
+        "topic": "Type of Trigonometric Equation"
+      },
+      {
+        "date": "2026-08-18",
+        "chapter": "Quadratic Equations",
+        "topic": "Introduction"
+      },
+      {
+        "date": "2026-08-19",
+        "chapter": "Quadratic Equations",
+        "topic": "Introduction"
+      },
+      {
+        "date": "2026-08-20",
+        "chapter": "Quadratic Equations",
+        "topic": "Common Roots"
+      },
+      {
+        "date": "2026-08-24",
+        "chapter": "Quadratic Equations",
+        "topic": "Theory of Equation"
+      },
+      {
+        "date": "2026-08-25",
+        "chapter": "Quadratic Equations",
+        "topic": "Graph of ax\u00b2+bx+c"
+      },
+      {
+        "date": "2026-08-26",
+        "chapter": "Quadratic Equations",
+        "topic": "Sign of ax\u00b2+bx+c"
+      },
+      {
+        "date": "2026-08-27",
+        "chapter": "Quadratic Equations",
+        "topic": "Location of Roots"
+      },
+      {
+        "date": "2026-08-31",
+        "chapter": "Quadratic Equations",
+        "topic": "Some Results"
+      },
+      {
+        "date": "2026-09-01",
+        "chapter": "Quadratic Equations",
+        "topic": "Descartes Rule of Signs"
+      },
+      {
+        "date": "2026-09-02",
+        "chapter": "Sequence and Series",
+        "topic": "Introduction"
+      },
+      {
+        "date": "2026-09-03",
+        "chapter": "Sequence and Series",
+        "topic": "Arithmetic Progression (AP)"
+      },
+      {
+        "date": "2026-09-07",
+        "chapter": "Sequence and Series",
+        "topic": "Geometric Progression (GP)"
+      },
+      {
+        "date": "2026-09-08",
+        "chapter": "Sequence and Series",
+        "topic": "Harmonic Progression (HP)"
+      },
+      {
+        "date": "2026-09-09",
+        "chapter": "Sequence and Series",
+        "topic": "Insertion of Means Between Two Numbers"
+      },
+      {
+        "date": "2026-09-10",
+        "chapter": "Sequence and Series",
+        "topic": "Properties of Means"
+      },
+      {
+        "date": "2026-09-14",
+        "chapter": "Sequence and Series",
+        "topic": "Arithmetico-Geometric Series (AGS)"
+      },
+      {
+        "date": "2026-09-15",
+        "chapter": "Sequence and Series",
+        "topic": "Summation, Method of Difference"
+      },
+      {
+        "date": "2026-09-16",
+        "chapter": "Sequence and Series",
+        "topic": "Telescopic Series"
+      },
+      {
+        "date": "2026-09-17",
+        "chapter": "Relation Function",
+        "topic": "Introduction"
+      },
+      {
+        "date": "2026-09-21",
+        "chapter": "Relation Function",
+        "topic": "Cartesian Products of Sets"
+      },
+      {
+        "date": "2026-09-22",
+        "chapter": "Relation Function",
+        "topic": "Relation"
+      },
+      {
+        "date": "2026-09-23",
+        "chapter": "Relation Function",
+        "topic": "Relation"
+      },
+      {
+        "date": "2026-09-24",
+        "chapter": "Relation Function",
+        "topic": "Functions"
+      },
+      {
+        "date": "2026-09-28",
+        "chapter": "Relation Function",
+        "topic": "Functions"
+      },
+      {
+        "date": "2026-09-29",
+        "chapter": "Permutations and Combinations",
+        "topic": "Introduction"
+      },
+      {
+        "date": "2026-09-30",
+        "chapter": "Permutations and Combinations",
+        "topic": "Counting"
+      },
+      {
+        "date": "2026-10-01",
+        "chapter": "Permutations and Combinations",
+        "topic": "Permutation"
+      },
+      {
+        "date": "2026-10-05",
+        "chapter": "Permutations and Combinations",
+        "topic": "Circular Permutation"
+      },
+      {
+        "date": "2026-10-06",
+        "chapter": "Permutations and Combinations",
+        "topic": "Combination"
+      },
+      {
+        "date": "2026-10-07",
+        "chapter": "Permutations and Combinations",
+        "topic": "Divisors"
+      },
+      {
+        "date": "2026-10-08",
+        "chapter": "Permutations and Combinations",
+        "topic": "Exponent"
+      },
+      {
+        "date": "2026-10-12",
+        "chapter": "Permutations and Combinations",
+        "topic": "Division and Distribution"
+      },
+      {
+        "date": "2026-10-13",
+        "chapter": "Permutations and Combinations",
+        "topic": "Derangement"
+      },
+      {
+        "date": "2026-10-14",
+        "chapter": "Permutations and Combinations",
+        "topic": "Some Rules"
+      },
+      {
+        "date": "2026-10-15",
+        "chapter": "Binomial theorem",
+        "topic": "Introduction, Expansion of (x+a)^n"
+      },
+      {
+        "date": "2026-10-19",
+        "chapter": "Binomial theorem",
+        "topic": "General Terms, Middle Terms"
+      },
+      {
+        "date": "2026-10-21",
+        "chapter": "Binomial theorem",
+        "topic": "Numerically Greatest Term, Form (A+B)^n"
+      },
+      {
+        "date": "2026-10-22",
+        "chapter": "Binomial theorem",
+        "topic": "Sum of Coefficients in Binomial Expansion"
+      },
+      {
+        "date": "2026-10-26",
+        "chapter": "Binomial theorem",
+        "topic": "Summation of Series"
+      },
+      {
+        "date": "2026-10-27",
+        "chapter": "Binomial theorem",
+        "topic": "Multinomial Theorem"
+      },
+      {
+        "date": "2026-10-28",
+        "chapter": "Binomial theorem",
+        "topic": "Binomial Theorem for Any Index"
+      },
+      {
+        "date": "2026-10-29",
+        "chapter": "Binomial theorem",
+        "topic": "Binomial Theorem for Any Index"
+      },
+      {
+        "date": "2026-11-02",
+        "chapter": "Straight Lines",
+        "topic": "Introduction, Section Formula"
+      },
+      {
+        "date": "2026-11-03",
+        "chapter": "Straight Lines",
+        "topic": "Different Centres of Triangle"
+      },
+      {
+        "date": "2026-11-04",
+        "chapter": "Straight Lines",
+        "topic": "Area, Locus"
+      },
+      {
+        "date": "2026-11-05",
+        "chapter": "Straight Lines",
+        "topic": "Straight Line, Slope"
+      },
+      {
+        "date": "2026-11-10",
+        "chapter": "Straight Lines",
+        "topic": "Standard Form of Straight Line"
+      },
+      {
+        "date": "2026-11-12",
+        "chapter": "Straight Lines",
+        "topic": "Position of Point w.r.t. Straight Line"
+      },
+      {
+        "date": "2026-11-17",
+        "chapter": "Straight Lines",
+        "topic": "Angle Between Two Straight Lines"
+      },
+      {
+        "date": "2026-11-18",
+        "chapter": "Straight Lines",
+        "topic": "Perpendicular Distance, Transformation of Axis"
+      },
+      {
+        "date": "2026-11-19",
+        "chapter": "Straight Lines",
+        "topic": "Concurrent Lines"
+      },
+      {
+        "date": "2026-11-23",
+        "chapter": "Straight Lines",
+        "topic": "Family of Lines"
+      },
+      {
+        "date": "2026-11-24",
+        "chapter": "Straight Lines",
+        "topic": "Pair of Straight Lines"
+      },
+      {
+        "date": "2026-11-25",
+        "chapter": "Straight Lines",
+        "topic": "Angle Bisector"
+      },
+      {
+        "date": "2026-11-26",
+        "chapter": "Circles",
+        "topic": "Introduction, General Equation"
+      },
+      {
+        "date": "2026-11-30",
+        "chapter": "Circles",
+        "topic": "Diameter Form, Parametric Form"
+      },
+      {
+        "date": "2026-12-01",
+        "chapter": "Circles",
+        "topic": "Intercept on Axis, Position of Point w.r.t. Circle"
+      },
+      {
+        "date": "2026-12-02",
+        "chapter": "Circles",
+        "topic": "Position of Straight Lines w.r.t. Circle, Tangent"
+      },
+      {
+        "date": "2026-12-03",
+        "chapter": "Circles",
+        "topic": "Chord of Contact, Chord of Midpoint Form"
+      },
+      {
+        "date": "2026-12-07",
+        "chapter": "Circles",
+        "topic": "Position of Two Circles"
+      },
+      {
+        "date": "2026-12-08",
+        "chapter": "Circles",
+        "topic": "Position of Two Circles (Touching, Intersecting, Separate)"
+      },
+      {
+        "date": "2026-12-09",
+        "chapter": "Circles",
+        "topic": "Circle Circumscribing a Triangle"
+      },
+      {
+        "date": "2026-12-10",
+        "chapter": "Conic Sections: Parabola",
+        "topic": "Introduction, Standard Form, Parametric Form, Types"
+      },
+      {
+        "date": "2026-12-14",
+        "chapter": "Conic Sections: Parabola",
+        "topic": "General Equation, Focal Distance"
+      },
+      {
+        "date": "2026-12-15",
+        "chapter": "Conic Sections: Parabola",
+        "topic": "Some Results"
+      },
+      {
+        "date": "2026-12-16",
+        "chapter": "Conic Sections: Parabola",
+        "topic": "Position of Point/Lines w.r.t. Parabola"
+      },
+      {
+        "date": "2026-12-17",
+        "chapter": "Conic Sections: Parabola",
+        "topic": "Tangent, Normal, Properties"
+      },
+      {
+        "date": "2026-12-21",
+        "chapter": "Conic Sections: Parabola",
+        "topic": "Focal Chord, Chord of Contact"
+      },
+      {
+        "date": "2026-12-22",
+        "chapter": "Conic Sections: Parabola",
+        "topic": "Chord in Midpoint Form, Pair of Tangents"
+      },
+      {
+        "date": "2026-12-23",
+        "chapter": "Conic Sections: Parabola",
+        "topic": "Director Circle, Properties"
+      },
+      {
+        "date": "2026-12-24",
+        "chapter": "Conic Sections: Ellipse",
+        "topic": "Introduction, Standard Form, Auxiliary Circle"
+      },
+      {
+        "date": "2026-12-28",
+        "chapter": "Conic Sections: Ellipse",
+        "topic": "General Equation, Another Definition, Focal Distance"
+      },
+      {
+        "date": "2026-12-29",
+        "chapter": "Conic Sections: Ellipse",
+        "topic": "Position of Point/Line w.r.t. Ellipse"
+      },
+      {
+        "date": "2026-12-30",
+        "chapter": "Conic Sections: Ellipse",
+        "topic": "Tangent, Normal"
+      },
+      {
+        "date": "2026-12-31",
+        "chapter": "Conic Sections: Ellipse",
+        "topic": "Chord Joining Two Points, Director Circle, Properties"
+      },
+      {
+        "date": "2027-01-04",
+        "chapter": "Conic Sections: Ellipse",
+        "topic": "Director Circle, Properties"
+      },
+      {
+        "date": "2027-01-05",
+        "chapter": "Conic Sections: Hyperbola",
+        "topic": "Introduction, Standard Form, Auxiliary Circle, General Equation"
+      },
+      {
+        "date": "2027-01-06",
+        "chapter": "Conic Sections: Hyperbola",
+        "topic": "Focal Distance, Position of Point/Lines w.r.t. Hyperbola"
+      },
+      {
+        "date": "2027-01-07",
+        "chapter": "Conic Sections: Hyperbola",
+        "topic": "Tangent, Normal, Properties, Chord of Contact"
+      },
+      {
+        "date": "2027-01-11",
+        "chapter": "Conic Sections: Hyperbola",
+        "topic": "Director Circle, Asymptotes, Rectangular Hyperbola"
+      },
+      {
+        "date": "2027-01-12",
+        "chapter": "Complex Number",
+        "topic": "Introduction, Complex Numbers"
+      },
+      {
+        "date": "2027-01-13",
+        "chapter": "Complex Number",
+        "topic": "Algebraic Operations"
+      },
+      {
+        "date": "2027-01-18",
+        "chapter": "Complex Number",
+        "topic": "Argand Plane or Complex Plane"
+      },
+      {
+        "date": "2027-01-19",
+        "chapter": "Complex Number",
+        "topic": "Conjugate of Complex"
+      },
+      {
+        "date": "2027-01-20",
+        "chapter": "Complex Number",
+        "topic": "Modulus of Complex Number"
+      },
+      {
+        "date": "2027-01-21",
+        "chapter": "Complex Number",
+        "topic": "Argument of Complex Numbers"
+      },
+      {
+        "date": "2027-01-22",
+        "chapter": "Complex Number",
+        "topic": "Form of Complex Numbers"
+      },
+      {
+        "date": "2027-01-23",
+        "chapter": "Complex Number",
+        "topic": "De Moivre's Theorem"
+      },
+      {
+        "date": "2027-01-25",
+        "chapter": "Complex Number",
+        "topic": "Cube Roots of Unity, nth Root of Unity"
+      },
+      {
+        "date": "2027-01-27",
+        "chapter": "Complex Number",
+        "topic": "Geometry of Complex Numbers"
+      },
+      {
+        "date": "2027-01-28",
+        "chapter": "Limits and Derivatives",
+        "topic": "Introduction, Limit"
+      },
+      {
+        "date": "2027-01-29",
+        "chapter": "Limits and Derivatives",
+        "topic": "Derivative"
+      },
+      {
+        "date": "2027-01-30",
+        "chapter": "Statistics",
+        "topic": "Introduction, Variable (Variate), Relative and Cumulative Frequency"
+      },
+      {
+        "date": "2027-02-01",
+        "chapter": "Statistics",
+        "topic": "Mean, Median"
+      },
+      {
+        "date": "2027-02-02",
+        "chapter": "Statistics",
+        "topic": "Mode, Relation Among Mean/Median/Mode, Measure of Dispersion, Variance"
+      },
+      {
+        "date": "2027-02-03",
+        "chapter": "Probability",
+        "topic": "Introduction, Event"
+      },
+      {
+        "date": "2027-02-04",
+        "chapter": "Probability",
+        "topic": "Types of Events, Algebra of Events, Complementary Event"
+      },
+      {
+        "date": "2027-02-05",
+        "chapter": "Probability",
+        "topic": "Mutually Exclusive/Exhaustive Event, Axiomatic Approach, Variance"
+      },
+      {
+        "date": "2027-02-06",
+        "chapter": "Introduction to Three Dimensional Geometry",
+        "topic": "Introduction, Coordinate Axes and Plane, Coordinate of Point, Distance Between Points, Section Formula"
+      },
+      {
+        "date": "2027-02-08",
+        "chapter": "Linear Inequalities",
+        "topic": "Introduction, Basic Concepts & Terminologies, Solving in One/Two Variables, Graphical Method, Word Problems"
+      },
+      {
+        "date": "2027-02-09",
+        "chapter": "Solution of Triangle",
+        "topic": "Introduction, Sine Rule, Cosine Rule, Projection Formulae, Napier's Analogy, Auxiliary Formulas"
+      },
+      {
+        "date": "2027-02-10",
+        "chapter": "Solution of Triangle",
+        "topic": "Area of Triangle, Centres of Triangle, Regular Polygon, Excentral Triangle, Some Results"
+      }
+    ]
+  },
+  "tests": [
+    {
+      "date": "2026-06-28",
+      "name": "Short Test-1",
+      "type": "Part Test",
+      "pattern": "Short Test"
+    },
+    {
+      "date": "2026-07-12",
+      "name": "JEE Main -1",
+      "type": "Part Test",
+      "pattern": "JEE Main"
+    },
+    {
+      "date": "2026-07-26",
+      "name": "JEE Main -2",
+      "type": "Part Test",
+      "pattern": "JEE Main"
+    },
+    {
+      "date": "2026-08-16",
+      "name": "JEE Advance-1",
+      "type": "Cumulative Test",
+      "pattern": "JEE Advanced"
+    },
+    {
+      "date": "2026-08-23",
+      "name": "JEE Main -3",
+      "type": "Part Test",
+      "pattern": "JEE Main"
+    },
+    {
+      "date": "2026-09-06",
+      "name": "JEE Main -4",
+      "type": "Part Test",
+      "pattern": "JEE Main"
+    },
+    {
+      "date": "2026-09-20",
+      "name": "JEE Advance-2",
+      "type": "Cumulative Test",
+      "pattern": "JEE Advanced"
+    },
+    {
+      "date": "2026-10-04",
+      "name": "JEE Main -5",
+      "type": "Part Test",
+      "pattern": "JEE Main"
+    },
+    {
+      "date": "2026-10-18",
+      "name": "JEE Main -6",
+      "type": "Part Test",
+      "pattern": "JEE Main"
+    },
+    {
+      "date": "2026-11-01",
+      "name": "JEE Advance-3",
+      "type": "Cumulative Test",
+      "pattern": "JEE Advanced"
+    },
+    {
+      "date": "2026-11-22",
+      "name": "JEE Main -7",
+      "type": "Part Test",
+      "pattern": "JEE Main"
+    },
+    {
+      "date": "2026-12-06",
+      "name": "JEE Main -8",
+      "type": "Part Test",
+      "pattern": "JEE Main"
+    },
+    {
+      "date": "2026-12-20",
+      "name": "JEE Advance-4",
+      "type": "Cumulative Test",
+      "pattern": "JEE Advanced"
+    },
+    {
+      "date": "2027-01-03",
+      "name": "JEE-9",
+      "type": "Part Test",
+      "pattern": "JEE Main"
+    },
+    {
+      "date": "2027-01-17",
+      "name": "JEE-10",
+      "type": "Part Test",
+      "pattern": "JEE Main"
+    },
+    {
+      "date": "2027-01-31",
+      "name": "JEE Advance-5",
+      "type": "Cumulative Test",
+      "pattern": "JEE Advanced"
+    },
+    {
+      "date": "2027-02-14",
+      "name": "JEE-11",
+      "type": "Part Test",
+      "pattern": "JEE Main"
+    },
+    {
+      "date": "2027-02-28",
+      "name": "JEE-12",
+      "type": "Full Test",
+      "pattern": "JEE Main"
+    },
+    {
+      "date": "2027-03-14",
+      "name": "JEE Advance-6",
+      "type": "Full Test",
+      "pattern": "JEE Advanced"
+    }
+  ],
+  "lastKnownPlannerDate": "2027-02-10"
+}

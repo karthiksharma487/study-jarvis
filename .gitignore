@@ -6,3 +6,6 @@ dist
 *.log
 .idea
 .vscode/settings.json
+
+# Local Netlify folder
+.netlify

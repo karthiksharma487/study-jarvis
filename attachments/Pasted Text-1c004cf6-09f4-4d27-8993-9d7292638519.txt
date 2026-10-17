@@ -1,0 +1,1515 @@
+You are an elite product team compressed into one AI:
+- senior product architect
+- senior full-stack engineer
+- world-class UI/UX designer
+- design systems engineer
+- database architect
+- accessibility specialist
+- performance engineer
+- QA engineer
+- SaaS product strategist
+
+Your job is to BUILD a production-quality, publishable web application called:
+
+STUDY JARVIS
+
+This is NOT a backlog tracker.
+
+This is NOT a simple student to-do list.
+
+This is NOT a Notion clone.
+
+This is a complete personal academic operating system designed for a serious student preparing for school + competitive exams.
+
+The final product must be polished enough to be publicly deployed and presented as a real software product.
+
+The application must feel cohesive, premium, fast, intelligent, modern, and genuinely useful.
+
+============================================================
+1. PRODUCT VISION
+============================================================
+
+STUDY JARVIS is a unified academic command center.
+
+Its purpose is to give a student ONE place to manage:
+
+- learning
+- lectures
+- courses
+- backlog
+- chapters
+- subjects
+- assignments
+- PDFs/resources
+- practice
+- revision
+- tests
+- performance
+- study sessions
+- schedules
+- goals
+- deadlines
+- exams
+- progress
+- analytics
+- consistency
+- and eventually AI-assisted study management
+
+The product should reduce mental load.
+
+The philosophy is:
+
+"Think less about managing studying.
+Spend more time actually studying."
+
+The application should answer:
+
+"What should I do now?"
+
+"What is remaining?"
+
+"How much have I completed?"
+
+"Where am I weak?"
+
+"How am I progressing?"
+
+"What is coming next?"
+
+"Am I on track?"
+
+============================================================
+2. TARGET USER
+============================================================
+
+Primary user:
+
+A Class 11 / 1st PU student preparing simultaneously for:
+
+- Karnataka 1st PU academics
+- JEE Main
+- JEE Advanced
+
+The architecture must remain generic enough that it can eventually support:
+
+- other students
+- other grades
+- NEET
+- boards
+- university students
+- competitive exam preparation
+
+Do not hard-code the product so tightly that it cannot scale.
+
+============================================================
+3. PRODUCT STRUCTURE
+============================================================
+
+Create these major areas:
+
+1. Dashboard
+2. My Study
+3. Courses
+4. Subjects
+5. Backlog
+6. Planner
+7. Calendar
+8. Tasks
+9. Lectures
+10. Resources
+11. Practice
+12. Revision
+13. Tests
+14. Analytics
+15. Goals
+16. Exams
+17. Settings
+
+Do NOT make every area feel like a separate disconnected application.
+
+Everything must work together through one coherent academic data model.
+
+============================================================
+4. DASHBOARD
+============================================================
+
+The Dashboard is the heart of the application.
+
+It must NOT be a giant wall of statistics.
+
+It should answer the student's most important questions immediately.
+
+Top area:
+
+GOOD MORNING / GOOD EVENING
+Student name
+Current date
+Current academic context
+
+Then a primary:
+
+TODAY
+
+Show:
+
+- today's most important tasks
+- planned lectures
+- study sessions
+- upcoming deadlines
+- revision due
+- scheduled tests
+- exam countdown when applicable
+
+Then:
+
+YOUR PROGRESS
+
+Show a clean summary of:
+
+- study time
+- learning progress
+- task completion
+- course progress
+- test performance
+- consistency
+
+Then:
+
+NEXT ACTION
+
+Show the single most useful recommended action.
+
+Examples:
+
+"Continue Physics Chapter 2"
+
+"Complete today's Mathematics practice"
+
+"Revision due: Chemical Bonding"
+
+"2 tasks remaining today"
+
+The user should never have to wonder what to do next.
+
+============================================================
+5. UNIVERSAL PROGRESS SYSTEM
+============================================================
+
+Create a unified progress engine.
+
+Track progress across multiple levels:
+
+Overall
+↓
+Goal
+↓
+Exam
+↓
+Course
+↓
+Subject
+↓
+Chapter
+↓
+Topic
+↓
+Lecture
+↓
+Practice
+
+Progress should be calculated wherever possible instead of requiring manual percentage entry.
+
+Support:
+
+- item completion
+- weighted progress where appropriate
+- time-based progress
+- quantity-based progress
+
+Do not create fake percentages.
+
+============================================================
+6. COURSE SYSTEM
+============================================================
+
+Create Courses.
+
+A course could be:
+
+Mission JEE
+Karnataka 1st PU Physics
+Mathematics Course
+Any future course
+
+A course contains:
+
+- subjects
+- chapters
+- lectures
+- resources
+- assignments
+- tests
+
+Course dashboard:
+
+Progress
+Current topic
+Remaining content
+Upcoming content
+Recent activity
+
+============================================================
+7. SUBJECT SYSTEM
+============================================================
+
+Subjects:
+
+Physics
+Chemistry
+Mathematics
+Computer Science
+English
+Hindi
+
+But the system must allow adding any subject.
+
+Each subject should have:
+
+- overall progress
+- chapters
+- topics
+- lectures
+- resources
+- practice
+- revision
+- test performance
+- study time
+
+Subject page should feel like a mini command center.
+
+============================================================
+8. CHAPTER SYSTEM
+============================================================
+
+Each chapter contains:
+
+- topic list
+- lectures
+- resources
+- PDFs
+- assignments
+- practice
+- tests
+- revision history
+- notes
+- progress
+
+Show chapter status:
+
+Not Started
+In Progress
+Strong
+Needs Revision
+Completed
+
+============================================================
+9. LECTURE SYSTEM
+============================================================
+
+Track:
+
+Title
+Course
+Subject
+Chapter
+Topic
+Type
+Duration
+Status
+Date planned
+Date started
+Date completed
+Watch time
+Playback speed
+Notes
+
+Statuses:
+
+Not Started
+In Progress
+Completed
+
+Allow:
+
+Mark Complete
+
+with one tap.
+
+Completion must automatically update all relevant progress.
+
+============================================================
+10. BACKLOG SYSTEM
+============================================================
+
+Backlog is an important feature, but NOT the identity of the application.
+
+Create a dedicated Backlog area.
+
+Current Mission JEE data:
+
+Normal lectures:
+
+Physics = 15
+Chemistry = 9
+Mathematics = 11
+
+Total = 35
+
+PDFs:
+
+Physics = 15
+Chemistry = 9
+Mathematics = 11
+
+Total = 35
+
+There are also:
+
+PHASE 0 — BASICS
+
+Physics Basics Marathon
+Chemistry Basics Marathon
+Mathematics Basics Marathon
+
+Approximately 15 hours each on average.
+
+PHASE 1 — CHAPTER MARATHONS
+
+Physics:
+Chapter Marathon 1
+Chapter Marathon 2
+
+Chemistry:
+Chapter Marathon 1
+Chapter Marathon 2
+
+Mathematics:
+Chapter Marathon 1
+Chapter Marathon 2
+
+Each approximately 8–9 hours on average.
+
+PHASE 2:
+
+Normal lectures.
+
+The student's intended progression is:
+
+Basics
+→
+2 chapters in Physics
+AND
+2 chapters in Chemistry
+AND
+2 chapters in Mathematics
+→
+Normal lectures
+
+There is currently NO deadline.
+
+Do not create a deadline.
+
+IMPORTANT:
+Do not hard-code invented chapter names or durations.
+
+============================================================
+11. PDF / RESOURCE MANAGEMENT
+============================================================
+
+Create a universal Resources system.
+
+Resources can include:
+
+PDF
+Notes
+Link
+Video
+Document
+Reference
+Formula sheet
+Question sheet
+
+Fields:
+
+Title
+Type
+Course
+Subject
+Chapter
+Associated lecture
+URL/file
+Status
+Notes
+
+Status:
+
+Unread
+In Progress
+Completed
+
+============================================================
+12. TASK MANAGEMENT
+============================================================
+
+Create tasks designed specifically for studying.
+
+Tasks can be:
+
+Lecture
+Assignment
+Practice
+Revision
+Reading
+Test
+Test Analysis
+College work
+Other
+
+Fields:
+
+Task
+Subject
+Course
+Priority
+Due date
+Status
+Estimated duration
+Actual duration
+
+Statuses:
+
+Not Started
+In Progress
+Completed
+
+Priority:
+
+Low
+Medium
+High
+Critical
+
+The system should not turn into a generic project-management application.
+
+Keep everything academically focused.
+
+============================================================
+13. PLANNER
+============================================================
+
+Create a daily and weekly planner.
+
+Daily view:
+
+Morning
+Afternoon
+Evening
+Night
+
+Allow study blocks.
+
+A study block can connect to:
+
+- lecture
+- task
+- chapter
+- practice
+- revision
+
+The system should display:
+
+Planned
+Completed
+Remaining
+
+============================================================
+14. CALENDAR
+============================================================
+
+Create a proper calendar.
+
+Show:
+
+- study sessions
+- deadlines
+- tests
+- exams
+- planned lectures
+- revision
+- important academic events
+
+Allow:
+
+Day
+Week
+Month
+
+views.
+
+Calendar events should link back to the relevant academic objects.
+
+============================================================
+15. STUDY SESSION TRACKER
+============================================================
+
+Create a Study Sessions system.
+
+A session should track:
+
+Date
+Start
+End
+Duration
+Course
+Subject
+Chapter
+Activity
+Notes
+
+Activity types:
+
+Lecture
+Practice
+Revision
+Reading
+Assignment
+Test
+Test Analysis
+Other
+
+Automatically calculate:
+
+Daily study time
+Weekly study time
+Monthly study time
+
+Do not force the user to start a timer.
+
+Allow quick manual logging.
+
+============================================================
+16. PRACTICE SYSTEM
+============================================================
+
+Create a practice tracker.
+
+Track:
+
+Subject
+Chapter
+Topic
+Source
+Exam type
+Questions attempted
+Correct
+Incorrect
+Skipped
+Accuracy
+Time spent
+
+Exam type:
+
+JEE Main
+JEE Advanced
+PUC
+Other
+
+Automatically calculate accuracy.
+
+Do not require the user to manually calculate it.
+
+============================================================
+17. REVISION SYSTEM
+============================================================
+
+Create an intelligent revision system.
+
+Track:
+
+Topic
+Chapter
+Subject
+First studied
+Last revised
+Next revision
+Revision count
+Strength
+
+Strength:
+
+Weak
+Developing
+Good
+Strong
+
+Show:
+
+Revision due today
+Revision due this week
+Overdue
+Recently revised
+
+Keep this system useful but simple.
+
+============================================================
+18. TEST SYSTEM
+============================================================
+
+Create Tests.
+
+Track:
+
+Test name
+Type
+Date
+Course
+Subject
+Chapters
+Maximum marks
+Marks obtained
+Percentage
+Time
+Accuracy
+Mistakes
+Analysis
+
+Types:
+
+JEE Main
+JEE Advanced
+PUC
+Chapter Test
+Mock Test
+Other
+
+Show performance trends.
+
+============================================================
+19. MISTAKE BOOK
+============================================================
+
+Create a mistake system.
+
+Categories:
+
+Concept
+Formula
+Calculation
+Silly mistake
+Time management
+Question interpretation
+Memory
+Strategy
+
+Each mistake can contain:
+
+Question
+Correct concept
+Why mistake happened
+Chapter
+Subject
+Test/source
+Status
+Reattempt result
+
+The purpose is learning from mistakes, not collecting them.
+
+============================================================
+20. GOALS
+============================================================
+
+Create Goals.
+
+Types:
+
+Long term
+Medium term
+Short term
+
+Examples:
+
+Clear JEE backlog
+Finish chapter
+Complete course
+Improve Physics score
+Prepare for exam
+
+Allow measurable goals.
+
+Show:
+
+Target
+Current
+Remaining
+Progress
+Deadline if provided
+
+Never invent deadlines.
+
+============================================================
+21. EXAM CENTER
+============================================================
+
+Create Exams.
+
+Track:
+
+Exam name
+Date
+Subjects
+Portion
+Preparation %
+Days remaining
+Priority
+Readiness
+
+Create a clean exam overview.
+
+Do NOT create fake exam dates.
+
+============================================================
+22. ANALYTICS
+============================================================
+
+Analytics must be genuinely useful.
+
+Show:
+
+Study time trend
+Course progress
+Subject progress
+Lecture completion
+Practice volume
+Accuracy
+Test performance
+Revision consistency
+Task completion
+
+Use charts sparingly.
+
+Every chart must answer an actual question.
+
+Avoid a dashboard full of meaningless graphs.
+
+============================================================
+23. INSIGHTS
+============================================================
+
+Create intelligent automatic insights.
+
+Examples:
+
+"You studied 6h 20m this week."
+
+"Physics received less study time than Mathematics."
+
+"Your Mathematics practice accuracy improved."
+
+"You have 3 revisions due."
+
+"Your JEE backlog decreased by 4 lectures."
+
+Insights should be generated from real data.
+
+Do not invent conclusions from insufficient data.
+
+============================================================
+24. AI ASSISTANT
+============================================================
+
+Create the architecture for:
+
+STUDY JARVIS AI
+
+The long-term assistant should understand the user's actual study database.
+
+Potential commands:
+
+"Jarvis, what should I study now?"
+
+"How much JEE backlog do I have?"
+
+"How many lectures did I complete this week?"
+
+"What chapters am I weakest in?"
+
+"What revision is due?"
+
+"Plan tomorrow for me."
+
+"I completed Physics Lecture 8."
+
+"Log 2 hours of Mathematics practice."
+
+"Show my progress."
+
+Do NOT pretend that an AI assistant is connected to data when it isn't.
+
+If real AI integration is available, implement it properly.
+
+Otherwise create a clean future-ready interface.
+
+============================================================
+25. QUICK ENTRY
+============================================================
+
+The application must make entering information extremely fast.
+
+Add:
+
++ Lecture
++ Task
++ Study Session
++ Resource
++ Practice
++ Revision
++ Test
+
+Quick actions should require minimal taps.
+
+The student must never feel like:
+
+"I'm spending more time updating Study Jarvis than studying."
+
+============================================================
+26. SEARCH
+============================================================
+
+Create global search.
+
+Search across:
+
+Courses
+Subjects
+Chapters
+Topics
+Lectures
+Resources
+Tasks
+Tests
+Goals
+
+Search should be fast.
+
+============================================================
+27. COMMAND PALETTE
+============================================================
+
+Add a professional command palette.
+
+Example:
+
+Ctrl/Cmd + K
+
+Possible commands:
+
+Create task
+Add lecture
+Log study session
+Search
+Open dashboard
+Open Physics
+Open backlog
+Start study session
+Mark complete
+
+This should make the application feel like a real professional productivity application.
+
+============================================================
+28. DESIGN SYSTEM
+============================================================
+
+Create a complete design system.
+
+Typography:
+
+Modern, highly readable sans-serif.
+
+Use clear hierarchy.
+
+Components must share:
+
+spacing
+radius
+border treatment
+shadows
+icon sizing
+button styles
+states
+
+Do not randomly style individual pages.
+
+Everything must look like one product.
+
+============================================================
+29. VISUAL LANGUAGE
+============================================================
+
+Aesthetic:
+
+premium
+futuristic
+academic
+minimal
+technical
+calm
+focused
+
+Think:
+
+premium productivity software
++ modern AI interface
++ academic command center
+
+Dark mode should be excellent.
+
+Light mode should also be excellent.
+
+Avoid:
+
+excessive neon
+gaming aesthetics
+childish gradients
+giant glowing elements
+random glassmorphism
+visual clutter
+
+Use visual effects with restraint.
+
+============================================================
+30. TYPOGRAPHY & SPACING
+============================================================
+
+Prioritize readability.
+
+Use:
+
+large page titles
+compact metadata
+consistent spacing
+clear section hierarchy
+
+Cards should have breathing room.
+
+Do not make every element a card.
+
+Use whitespace intelligently.
+
+============================================================
+31. RESPONSIVE DESIGN
+============================================================
+
+Desktop:
+
+Sidebar
+Main workspace
+Optional contextual panel
+
+Tablet:
+
+Collapsible navigation
+
+Mobile:
+
+Bottom navigation or compact navigation
+
+Mobile must feel deliberately designed.
+
+NOT:
+
+"desktop UI squeezed onto a phone."
+
+============================================================
+32. ACCESSIBILITY
+============================================================
+
+Implement proper:
+
+semantic HTML
+keyboard navigation
+focus states
+ARIA labels
+contrast
+screen-reader-friendly controls
+
+Never communicate information using color alone.
+
+============================================================
+33. PERFORMANCE
+============================================================
+
+The application must be fast.
+
+Optimize:
+
+database reads
+component rendering
+animations
+asset loading
+search
+charts
+
+Avoid unnecessary dependencies.
+
+Avoid heavy animations.
+
+============================================================
+34. ANIMATION
+============================================================
+
+Use subtle professional motion.
+
+Examples:
+
+page transitions
+hover states
+progress changes
+completion state
+modal transitions
+sidebar transitions
+
+Animations should communicate state.
+
+Do not use animation simply because it looks flashy.
+
+============================================================
+35. DATA MODEL
+============================================================
+
+Create a scalable schema.
+
+Core entities:
+
+User
+Course
+Subject
+Chapter
+Topic
+Lecture
+Resource
+Task
+StudySession
+PracticeSession
+Revision
+Test
+Mistake
+Goal
+Exam
+CalendarEvent
+ProgressEvent
+
+Use relations.
+
+Avoid duplicated data where possible.
+
+============================================================
+36. DATA INTEGRITY
+============================================================
+
+Progress must be derived from actual records.
+
+For example:
+
+completed lectures / total lectures
+
+completed chapters / total chapters
+
+completed tasks / total tasks
+
+Never allow dashboard numbers to become inconsistent with underlying data.
+
+============================================================
+37. PERSISTENCE
+============================================================
+
+Data must survive:
+
+refresh
+closing browser
+reopening application
+
+Use proper persistent storage.
+
+If backend support exists, use it.
+
+If not, implement robust local persistence with an architecture designed for future migration.
+
+============================================================
+38. IMPORT / EXPORT
+============================================================
+
+Allow:
+
+Export data
+Import data
+
+Use JSON and/or CSV.
+
+Never lock the student's data inside the application.
+
+============================================================
+39. SECURITY
+============================================================
+
+Never expose secrets.
+
+Never hard-code API keys.
+
+Validate inputs.
+
+Protect authenticated data.
+
+Use secure data-handling practices.
+
+============================================================
+40. ERROR STATES
+============================================================
+
+Create polished states for:
+
+loading
+empty
+error
+offline
+no search results
+missing data
+
+Never show a broken blank screen.
+
+============================================================
+41. ONBOARDING
+============================================================
+
+Create a professional first-time setup.
+
+Ask only useful questions.
+
+Example:
+
+Name
+Academic level
+Primary goals
+Courses
+
+Do not create a huge questionnaire.
+
+The user should reach the dashboard quickly.
+
+============================================================
+42. STARTING DATA
+============================================================
+
+Seed the application with the user's current Mission JEE structure.
+
+Subjects:
+
+Physics
+Chemistry
+Mathematics
+
+Normal lectures:
+
+Physics 15
+Chemistry 9
+Mathematics 11
+
+Total = 35
+
+PDFs:
+
+Physics 15
+Chemistry 9
+Mathematics 11
+
+Total = 35
+
+Basics:
+
+Physics Basics Marathon
+Chemistry Basics Marathon
+Mathematics Basics Marathon
+
+Chapter marathons:
+
+Physics 1
+Physics 2
+
+Chemistry 1
+Chemistry 2
+
+Mathematics 1
+Mathematics 2
+
+All initially:
+
+Not Started
+
+Do not invent chapter names.
+
+Do not invent exact durations.
+
+============================================================
+43. NO DEADLINE CURRENTLY
+============================================================
+
+Do not create a deadline for the backlog.
+
+The system supports deadlines, but none is currently assigned.
+
+============================================================
+44. JEE LIVE CLASS CONTEXT
+============================================================
+
+Mission JEE live classes are approximately:
+
+4:00 PM
+6:15 PM
+
+The user is currently working through backlog before fully returning to live classes.
+
+Represent this as context, NOT as a permanent hard-coded rule.
+
+The user should eventually be able to change their class schedule.
+
+============================================================
+45. HOME EXPERIENCE
+============================================================
+
+The homepage/dashboard should feel alive.
+
+Show:
+
+Today
+Next action
+Current progress
+Upcoming
+Recent activity
+Insights
+
+The dashboard should evolve as the student uses the app.
+
+============================================================
+46. RECENT ACTIVITY
+============================================================
+
+Show recent events such as:
+
+Completed Physics Lecture 7
+Completed PDF
+Logged 1h 20m study
+Completed Chemistry chapter
+Finished practice session
+
+This gives the application a sense of continuity.
+
+============================================================
+47. MOTIVATION
+============================================================
+
+Keep motivational elements subtle.
+
+Do not fill the application with quotes.
+
+Use progress itself as motivation.
+
+Milestones can be celebrated tastefully:
+
+Course completed
+Chapter completed
+Major backlog milestone
+Exam completed
+
+============================================================
+48. PROFESSIONAL PRODUCT QUALITY
+============================================================
+
+Treat this as a real commercial SaaS product.
+
+Everything must be consistent:
+
+buttons
+forms
+modals
+dropdowns
+tables
+charts
+cards
+navigation
+empty states
+errors
+mobile layouts
+animations
+
+No default-looking unfinished components.
+
+No dead buttons.
+
+No fake navigation.
+
+No placeholder UI that appears functional but isn't.
+
+============================================================
+49. TESTING
+============================================================
+
+Before considering the product complete, test:
+
+Navigation
+Dashboard
+Courses
+Subjects
+Lectures
+Resources
+Tasks
+Planner
+Calendar
+Backlog
+Practice
+Revision
+Tests
+Goals
+Exams
+Search
+Command palette
+Settings
+Mobile layout
+Desktop layout
+Dark mode
+Light mode
+Persistence
+Create
+Edit
+Delete
+Complete
+Undo completion
+Filters
+Sorting
+Empty states
+Error states
+
+Verify that every calculated value matches the underlying data.
+
+============================================================
+50. FINAL QUALITY BAR
+============================================================
+
+Do not stop at a prototype.
+
+Do not stop at a static mockup.
+
+Do not stop at a visually attractive dashboard.
+
+Build a REAL FUNCTIONAL PRODUCT.
+
+Before delivering:
+
+Review every screen visually.
+
+Remove unnecessary clutter.
+
+Improve spacing.
+
+Improve hierarchy.
+
+Fix inconsistencies.
+
+Fix mobile layout.
+
+Fix accessibility issues.
+
+Fix logic errors.
+
+Fix broken states.
+
+Make loading states polished.
+
+Make empty states polished.
+
+Make all buttons functional.
+
+Make data persistent.
+
+Make calculations accurate.
+
+============================================================
+51. PRODUCT IDENTITY
+============================================================
+
+The final application should feel like:
+
+"An operating system for my academic life."
+
+NOT:
+
+"A website that tracks my backlog."
+
+The backlog is one module.
+
+The complete product is:
+
+STUDY JARVIS.
+
+============================================================
+52. FINAL EXPERIENCE
+============================================================
+
+When the user opens the application, they should immediately understand:
+
+WHERE AM I?
+
+WHAT AM I DOING?
+
+WHAT SHOULD I DO NEXT?
+
+HOW AM I PROGRESSING?
+
+WHAT IS COMING?
+
+WHAT NEEDS ATTENTION?
+
+The application should make academic management feel effortless.
+
+============================================================
+FINAL INSTRUCTION
+============================================================
+
+BUILD THE COMPLETE APPLICATION.
+
+Do not simply describe the design.
+
+Do not give me a tutorial.
+
+Do not give me a list of future ideas.
+
+Actually implement the product.
+
+Use the best architecture available in your environment.
+
+Make reasonable engineering decisions without constantly asking for trivial clarification.
+
+Where information is unknown, build flexible empty states and editable fields instead of inventing data.
+
+The finished product must be:
+
+FUNCTIONAL
+SCALABLE
+RESPONSIVE
+ACCESSIBLE
+FAST
+POLISHED
+PROFESSIONAL
+PUBLISHABLE
+ORIGINAL
+COHESIVE
+
+Build it to a standard where the result could realistically be deployed as a public web application.
