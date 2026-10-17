@@ -46,82 +46,67 @@ export function resourcesOf(data: StudyData, filter: Partial<Pick<Resource, "sub
   });
 }
 
-export function chapterProgress(data: StudyData, chapterId: string): CountProgress {
-  const lectures = lecturesOf(data, { chapterId });
-  const resources = resourcesOf(data, { chapterId });
-  const topics = data.topics.filter((t) => t.chapterId === chapterId);
-  const items = [
-    ...lectures.map((l) => ({ status: l.status })),
-    ...resources.map((r) => ({ status: r.status })),
-    ...topics.map((t) => ({ status: t.status })),
-  ];
-  return countProgress(items);
+export function isDelivered(lecture: Lecture, today = todayKey()): boolean {
+  return Boolean(lecture.plannedDate && lecture.plannedDate <= today);
 }
 
-export function deriveChapterStatus(data: StudyData, chapter: Chapter): ChapterStatus {
-  const p = chapterProgress(data, chapter.id);
-  const revs = data.revisions.filter((r) => r.chapterId === chapter.id);
-  const overdue = revs.some((r) => r.nextRevision < todayKey() && r.strength !== "strong");
-  if (p.total === 0) return "not_started";
-  if (p.done === 0) return "not_started";
-  if (p.done === p.total) {
-    if (overdue) return "needs_revision";
-    const strong = revs.length > 0 && revs.every((r) => r.strength === "strong" || r.strength === "good");
-    if (strong) return "strong";
-    return "completed";
-  }
-  if (overdue) return "needs_revision";
-  return "in_progress";
+export function isLectureChecked(data: StudyData, lecture: Lecture): boolean {
+  return data.lectureTicks?.[lecture.id] === true;
+}
+
+export function lectureProgress(data: StudyData, lectures: Lecture[], today = todayKey()): CountProgress {
+  return countProgress(lectures.filter((l) => isDelivered(l, today)).map((l) => ({
+    status: isLectureChecked(data, l) ? "completed" as const : "not_started" as const,
+  })));
+}
+
+export function chapterProgress(data: StudyData, chapterId: string, today = todayKey()): CountProgress {
+  return lectureProgress(data, lecturesOf(data, { chapterId }), today);
+}
+
+export function deriveChapterStatus(data: StudyData, chapter: Chapter, today = todayKey()): ChapterStatus {
+  const p = chapterProgress(data, chapter.id, today);
+  if (p.total === 0 || p.done === 0) return "not_started";
+  return p.done === p.total ? "completed" : "in_progress";
+}
+
+/** Only chapters containing at least one delivered lecture enter the denominator. */
+export function completionSummary(data: StudyData, subjectId?: string, today = todayKey()) {
+  const lectures = data.lectures.filter((l) => !subjectId || l.subjectId === subjectId);
+  const deliveredChapterIds = new Set(lectures.filter((l) => isDelivered(l, today)).map((l) => l.chapterId).filter(Boolean));
+  const chapters = data.chapters.filter((c) => deliveredChapterIds.has(c.id));
+  return {
+    lectures: lectureProgress(data, lectures, today),
+    chapters: countProgress(chapters.map((c) => ({ status: deriveChapterStatus(data, c, today) === "completed" ? "completed" : "not_started" }))),
+  };
 }
 
 export function subjectProgress(data: StudyData, subjectId: string): CountProgress {
-  return countProgress([
-    ...lecturesOf(data, { subjectId }).map((l) => ({ status: l.status })),
-    ...resourcesOf(data, { subjectId }).map((r) => ({ status: r.status })),
-  ]);
+  return lectureProgress(data, lecturesOf(data, { subjectId }));
 }
 
 export function courseProgress(data: StudyData, courseId: string): CountProgress {
-  return countProgress([
-    ...lecturesOf(data, { courseId }).map((l) => ({ status: l.status })),
-    ...resourcesOf(data, { courseId }).map((r) => ({ status: r.status })),
-  ]);
+  return lectureProgress(data, lecturesOf(data, { courseId }));
 }
 
 export function overallProgress(data: StudyData): CountProgress {
-  return countProgress([
-    ...data.lectures.map((l) => ({ status: l.status })),
-    ...data.resources.map((r) => ({ status: r.status })),
-    ...data.tasks.map((t) => ({ status: t.status })),
-  ]);
+  return lectureProgress(data, data.lectures);
 }
 
-/**
- * Backlog = every real, dated lecture whose class has already happened
- * (plannedDate <= today) but hasn't been marked watched yet. This mirrors
- * the actual Drona JEE 2.0 schedule rather than an invented phase system:
- * as each real class date passes, it automatically becomes part of the
- * backlog if not yet completed — no separate "add lecture" step needed.
- */
 export function backlogCounts(data: StudyData, today = todayKey()) {
-  const due = data.lectures.filter((l) => (l.plannedDate ?? "") <= today);
-  const upcoming = data.lectures.filter((l) => (l.plannedDate ?? "") > today);
+  const due = data.lectures.filter((l) => isDelivered(l, today));
+  const upcoming = data.lectures.filter((l) => l.plannedDate && l.plannedDate > today);
   const pdfsDue = data.resources.filter(
-    (r) => r.kind === "pdf" && data.lectures.some((l) => l.id === r.lectureId && (l.plannedDate ?? "") <= today),
+    (r) => r.kind === "pdf" && due.some((l) => l.id === r.lectureId),
   );
-  const bySubject = (subjectId: string) => {
-    const n = due.filter((l) => l.subjectId === subjectId);
-    const p = pdfsDue.filter((r) => r.subjectId === subjectId);
-    return {
-      lectures: countProgress(n),
-      pdfs: countProgress(p.map((r) => ({ status: r.status }))),
-    };
-  };
   return {
-    lectures: countProgress(due),
-    upcoming: countProgress(upcoming),
-    pdfs: countProgress(pdfsDue.map((r) => ({ status: r.status }))),
-    bySubject,
+    lectures: lectureProgress(data, due, today),
+    upcoming: countProgress(upcoming.map((l) => ({ status: isLectureChecked(data, l) ? "completed" : "not_started" }))),
+    pdfs: countProgress(pdfsDue),
+    bySubject: (subjectId: string) => ({
+      lectures: lectureProgress(data, due.filter((l) => l.subjectId === subjectId), today),
+      pdfs: countProgress(pdfsDue.filter((r) => r.subjectId === subjectId)),
+    }),
   };
 }
 
@@ -171,8 +156,8 @@ export function currentPhase(data: StudyData, today = todayKey()): {
   label: string;
   detail: string;
 } {
-  const due = data.lectures.filter((l) => (l.plannedDate ?? "") <= today);
-  const dueLeft = due.filter((l) => l.status !== "completed");
+  const due = data.lectures.filter((l) => isDelivered(l, today));
+  const dueLeft = due.filter((l) => !isLectureChecked(data, l));
   if (due.length === 0) {
     return { key: "complete", label: "No classes yet", detail: "Nothing scheduled up to today." };
   }

@@ -1,10 +1,10 @@
+import { LectureCheckbox } from "@/components/app/lecture-checkbox";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useStudyStore } from "@/lib/study/store";
-import { currentPhase, lecturesOf, studyMinutes, subjectProgress } from "@/lib/study/progress";
+import { currentPhase, isDelivered, lecturesOf, studyMinutes, subjectProgress } from "@/lib/study/progress";
 import { recommendNext } from "@/lib/study/next-action";
 import { formatDuration, todayKey, startOfWeek } from "@/lib/utils";
 import { PageHeader, ProgressRow, Stat, StatusBadge, Surface } from "@/components/app/shared";
-import { StatusCycle } from "@/components/app/status-cycle";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
@@ -14,7 +14,6 @@ export const Route = createFileRoute("/study")({ component: MyStudy });
 
 function MyStudy() {
   const data = useStudyStore();
-  const setLectureStatus = useStudyStore((s) => s.setLectureStatus);
   const addSession = useStudyStore((s) => s.addSession);
   const phase = currentPhase(data);
   const next = recommendNext(data);
@@ -23,7 +22,7 @@ function MyStudy() {
   const [mins, setMins] = useState("60");
   const inProgress = data.lectures.filter((l) => l.status === "in_progress");
   const pipeline = data.lectures
-    .filter((l) => l.status !== "completed" && (l.plannedDate ?? "") <= today)
+    .filter((l) => l.status !== "completed" && isDelivered(l, today))
     .sort((a, b) => (a.plannedDate ?? "").localeCompare(b.plannedDate ?? ""))
     .slice(0, 8);
   const nextLectureId = next.action?.type === "open-lecture" ? next.action.id : undefined;
@@ -54,10 +53,7 @@ function MyStudy() {
           <p className="mt-1 text-sm text-muted-foreground">{next.detail}</p>
           <div className="mt-4 flex flex-wrap gap-2">
             {nextLecture ? (
-              <StatusCycle
-                status={nextLecture.status}
-                onChange={(st) => setLectureStatus(nextLecture.id, st)}
-              />
+              <LectureCheckbox lecture={nextLecture} />
             ) : (
               <Button asChild>
                 <Link to={next.href}>Open</Link>
@@ -106,7 +102,7 @@ function MyStudy() {
                   <p className="truncate text-sm">{l.title}</p>
                   <StatusBadge status={l.status} />
                 </div>
-                <StatusCycle status={l.status} onChange={(st) => setLectureStatus(l.id, st)} />
+                <LectureCheckbox lecture={l} />
               </li>
             ))}
           </ul>

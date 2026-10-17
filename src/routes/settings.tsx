@@ -119,7 +119,7 @@ function SettingsPage() {
       <Surface className="mb-4 space-y-3">
         <h2 className="text-sm font-semibold">Data</h2>
         <p className="text-sm text-muted-foreground">
-          Everything lives on this device. Export JSON to back it up; CSV for lectures, tasks, or sessions.
+          Everything lives on this device. Export JSON to back it up; CSV for lectures, tasks, or sessions. Importing keeps your current lecture checkboxes unchanged.
         </p>
         <div className="flex flex-wrap gap-2">
           <Button
@@ -167,7 +167,7 @@ function SettingsPage() {
       <Surface className="space-y-3">
         <h2 className="text-sm font-semibold">Reset</h2>
         <p className="text-sm text-muted-foreground">
-          Restores the original Mission JEE structure (all not started) and keeps you onboarded.
+          Restores the original Mission JEE structure and keeps you onboarded. Lecture checkboxes stay unchanged; tick or untick each lecture individually.
         </p>
         {confirmReset ? (
           <div className="flex gap-2">

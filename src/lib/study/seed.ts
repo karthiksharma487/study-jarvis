@@ -189,6 +189,7 @@ function goals(): Goal[] {
 export function createSeedData(): StudyData {
   return {
     lastKnownPlannerDate: PLAN.lastKnownPlannerDate,
+    lectureTicks: {},
     profile: {
       name: "",
       academicLevel: "class_11",

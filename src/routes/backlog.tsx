@@ -1,19 +1,19 @@
+import { LectureCheckbox } from "@/components/app/lecture-checkbox";
 import { useMemo } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { useStudyStore } from "@/lib/study/store";
-import { backlogCounts, currentPhase } from "@/lib/study/progress";
+import { backlogCounts, currentPhase, isDelivered } from "@/lib/study/progress";
 import { todayKey } from "@/lib/utils";
 import { PageHeader, ProgressRow, Stat, StatusBadge, Surface } from "@/components/app/shared";
-import { StatusCycle } from "@/components/app/status-cycle";
 import type { Chapter, Lecture } from "@/lib/study/types";
 
 export const Route = createFileRoute("/backlog")({ component: BacklogPage });
 
 function ChapterGroup({ chapter, lectures }: { chapter: Chapter; lectures: Lecture[] }) {
-  const setLectureStatus = useStudyStore((s) => s.setLectureStatus);
   const today = todayKey();
-  const due = lectures.filter((l) => (l.plannedDate ?? "") <= today);
-  const doneCount = due.filter((l) => l.status === "completed").length;
+  const ticks = useStudyStore((s) => s.lectureTicks);
+  const due = lectures.filter((l) => isDelivered(l, today));
+  const doneCount = due.filter((l) => ticks?.[l.id] === true).length;
   if (lectures.length === 0) return null;
   return (
     <details className="group mb-2 rounded-lg border border-border bg-card" open={doneCount < due.length}>
@@ -21,7 +21,7 @@ function ChapterGroup({ chapter, lectures }: { chapter: Chapter; lectures: Lectu
         <div className="min-w-0">
           <p className="text-sm font-medium">{chapter.name}</p>
           <p className="text-xs text-muted-foreground">
-            {due.length} delivered so far · {doneCount} watched
+            {due.length} delivered so far · {doneCount} watched{due.length > 0 && doneCount === due.length ? " · Complete" : ""}
             {lectures.length > due.length ? ` · ${lectures.length - due.length} upcoming` : ""}
           </p>
         </div>
@@ -29,7 +29,7 @@ function ChapterGroup({ chapter, lectures }: { chapter: Chapter; lectures: Lectu
       </summary>
       <ul className="divide-y divide-border border-t border-border">
         {lectures.map((l) => {
-          const isDue = (l.plannedDate ?? "") <= today;
+          const isDue = isDelivered(l, today);
           return (
             <li key={l.id} className="flex flex-col gap-2 px-4 py-3 sm:flex-row sm:items-center">
               <div className="min-w-0 flex-1">
@@ -40,7 +40,7 @@ function ChapterGroup({ chapter, lectures }: { chapter: Chapter; lectures: Lectu
               </div>
               <div className="flex items-center gap-2">
                 <StatusBadge status={l.status} />
-                <StatusCycle status={l.status} onChange={(st) => setLectureStatus(l.id, st)} />
+                <LectureCheckbox lecture={l} />
               </div>
             </li>
           );
@@ -81,7 +81,7 @@ function BacklogPage() {
       />
       <div className="mb-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <Surface>
-          <Stat label="Lectures delivered" value={`${counts.lectures.remaining}`} hint={`${counts.lectures.done} of ${counts.lectures.total} watched`} />
+          <Stat label="Lectures remaining" value={`${counts.lectures.remaining}`} hint={`${counts.lectures.done} of ${counts.lectures.total} watched`} />
         </Surface>
         <Surface>
           <Stat label="PDFs to read" value={`${counts.pdfs.remaining}`} hint={`${counts.pdfs.done} of ${counts.pdfs.total} done`} />

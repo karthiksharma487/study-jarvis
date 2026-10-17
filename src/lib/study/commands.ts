@@ -25,29 +25,8 @@ export function tryLocalCommand(input: string): CommandResult {
   const text = input.trim();
   const store = useStudyStore.getState();
 
-  const complete =
-    text.match(/^(?:i\s+)?(?:completed|finished|done with)\s+(.+?)(?:\s+lecture\s+(\d+))?\.?$/i) ??
-    text.match(/^(?:complete|finish|mark)\s+(.+?)(?:\s+lecture\s+(\d+))?\.?$/i);
-  if (complete) {
-    const raw = complete[1]?.trim() ?? "";
-    const num = complete[2];
-    const subject = subjectByName(raw.split(/\s+/)[0] ?? "");
-    let lecture = store.lectures.find((l) => l.title.toLowerCase() === raw.toLowerCase());
-    if (!lecture && subject && num) {
-      lecture = store.lectures.find(
-        (l) => l.subjectId === subject.id && l.kind === "normal" && l.title.endsWith(` ${num}`),
-      );
-    }
-    if (!lecture && subject && /basics/i.test(raw)) {
-      lecture = store.lectures.find((l) => l.subjectId === subject.id && l.kind === "basics");
-    }
-    if (!lecture) {
-      lecture = store.lectures.find((l) => l.title.toLowerCase().includes(raw.toLowerCase()));
-    }
-    if (lecture) {
-      store.setLectureStatus(lecture.id, "completed");
-      return { ok: true, message: `Marked ${lecture.title} complete. Progress updated.` };
-    }
+  if (/^(?:(?:i\s+)?(?:completed|finished|done with)|complete|finish|mark|start|begin)\s+/i.test(text)) {
+    return { ok: true, message: "Tick or untick the individual lecture’s checkbox in Lectures or Backlog to change completion. Chat commands do not change lecture progress." };
   }
 
   const log =
@@ -69,16 +48,6 @@ export function tryLocalCommand(input: string): CommandResult {
     });
     const who = subject?.name ?? rest;
     return { ok: true, message: `Logged ${minutes} minutes of ${who}.` };
-  }
-
-  const start = text.match(/^(?:start|begin)\s+(.+)$/i);
-  if (start) {
-    const raw = start[1]?.trim() ?? "";
-    const lecture = store.lectures.find((l) => l.title.toLowerCase().includes(raw.toLowerCase()));
-    if (lecture) {
-      store.setLectureStatus(lecture.id, "in_progress");
-      return { ok: true, message: `Started ${lecture.title}.` };
-    }
   }
 
   return { ok: false };

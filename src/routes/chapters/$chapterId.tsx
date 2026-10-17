@@ -1,3 +1,4 @@
+import { LectureCheckbox } from "@/components/app/lecture-checkbox";
 import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useStudyStore } from "@/lib/study/store";
@@ -16,7 +17,6 @@ function ChapterDetail() {
   const updateChapter = useStudyStore((s) => s.updateChapter);
   const addTopic = useStudyStore((s) => s.addTopic);
   const updateTopic = useStudyStore((s) => s.updateTopic);
-  const setLectureStatus = useStudyStore((s) => s.setLectureStatus);
   const setResourceStatus = useStudyStore((s) => s.setResourceStatus);
   const chapter = data.chapters.find((c) => c.id === chapterId);
   const [topicName, setTopicName] = useState("");
@@ -41,12 +41,12 @@ function ChapterDetail() {
       <PageHeader
         eyebrow={subject?.name ?? "Chapter"}
         title={chapter.name}
-        description={`Status is derived from lectures, resources, topics, and revision — currently ${status.replaceAll("_", " ")}.`}
+        description={`Status is derived only from individually ticked, delivered lectures — currently ${status.replaceAll("_", " ")}.`}
       />
       <div className="mb-4 flex flex-wrap items-center gap-3">
         <ChapterStatusBadge status={status} />
         <span className="text-sm text-muted-foreground">
-          {p.done}/{p.total} items
+          {p.done}/{p.total} delivered lectures ticked
         </span>
       </div>
       <ProgressRow label="Chapter progress" done={p.done} total={p.total} pct={p.pct} />
@@ -100,9 +100,10 @@ function ChapterDetail() {
               <li key={l.id} className="flex items-center justify-between gap-2 py-2">
                 <div>
                   <p className="text-sm">{l.title}</p>
+                  <p className="text-xs text-muted-foreground">{l.plannedDate ?? "Undated"}</p>
                   <StatusBadge status={l.status} />
                 </div>
-                <StatusCycle status={l.status} onChange={(st) => setLectureStatus(l.id, st)} />
+                <LectureCheckbox lecture={l} />
               </li>
             ))}
           </ul>

@@ -3,7 +3,7 @@ import { test } from "node:test";
 import { readFileSync } from "node:fs";
 import { createServer } from "vite";
 
-const server = await createServer({ configFile: false, cacheDir: "node_modules/.vite-planner-tests", server: { middlewareMode: true }, appType: "custom" });
+const server = await createServer({ configFile: false, resolve: { alias: { "@": new URL("../src", import.meta.url).pathname } }, cacheDir: "node_modules/.vite-planner-tests", server: { middlewareMode: true }, appType: "custom" });
 const { createSeedData } = await server.ssrLoadModule("/src/lib/study/seed.ts");
 const { reconcilePlanner } = await server.ssrLoadModule("/src/lib/study/planner.ts");
 const plan = JSON.parse(readFileSync(new URL("../src/lib/study/data/mission-jee-plan.json", import.meta.url)));
@@ -31,6 +31,7 @@ try {
   });
   test("refresh and backup import retain progress, custom records, and legacy references", () => {
     const saved = createSeedData();
+    delete saved.lectureTicks; // Simulate a backup made before checkbox tracking.
     saved.profile.name = "Test student";
     const first = saved.lectures[0];
     first.id = "lecture-physics-normal-1";
@@ -53,6 +54,49 @@ try {
     assert.equal(next.exams.at(-1).name, "Personal exam");
     assert.equal(next.lectures.length, 405);
     assert.deepEqual(reconcilePlanner(next), next);
+  });
+  const { chapterProgress, deriveChapterStatus, completionSummary } = await server.ssrLoadModule("/src/lib/study/progress.ts");
+  const { useStudyStore } = await server.ssrLoadModule("/src/lib/study/store.ts");
+  const { tryLocalCommand } = await server.ssrLoadModule("/src/lib/study/commands.ts");
+  test("chapter completion counts delivered ticks only and reverses on a middle untick", () => {
+    const data = createSeedData();
+    const chapter = data.chapters[0];
+    data.lectures = data.lectures.filter((l) => l.chapterId === chapter.id).slice(0, 3);
+    const [first, middle, future] = data.lectures;
+    const today = middle.plannedDate;
+    data.lectureTicks = { [first.id]: true, [middle.id]: true };
+    data.revisions = [{ chapterId: chapter.id, nextRevision: "2000-01-01", strength: "weak" }];
+    assert.equal(chapterProgress(data, chapter.id, today).total, 2);
+    assert.equal(deriveChapterStatus(data, chapter, today), "completed");
+    assert.equal(completionSummary(data, undefined, today).chapters.done, 1);
+    assert.equal(completionSummary(data, chapter.subjectId, today).lectures.done, 2);
+    assert.equal(deriveChapterStatus(data, chapter, future.plannedDate), "in_progress");
+    data.lectureTicks[middle.id] = false;
+    assert.equal(deriveChapterStatus(data, chapter, today), "in_progress");
+    assert.equal(completionSummary(data, undefined, today).chapters.done, 0);
+    assert.equal(completionSummary(data, undefined, "2000-01-01").chapters.total, 0);
+    data.lectureTicks = { [future.id]: true };
+    assert.equal(completionSummary(data, undefined, today).lectures.done, 0);
+  });
+  test("only individual checkbox action changes ticks; commands, import and reset cannot complete lectures", () => {
+    useStudyStore.setState(createSeedData());
+    const [first, second] = useStudyStore.getState().lectures;
+    useStudyStore.getState().setLectureChecked(first.id, true);
+    assert.equal(useStudyStore.getState().lectureTicks[first.id], true);
+    assert.notEqual(useStudyStore.getState().lectureTicks[second.id], true);
+    useStudyStore.getState().updateLecture(second.id, { status: "completed" });
+    assert.equal(useStudyStore.getState().lectures[1].status, "not_started");
+    tryLocalCommand(`complete ${second.title}`);
+    assert.notEqual(useStudyStore.getState().lectureTicks[second.id], true);
+    const backup = createSeedData();
+    backup.lectureTicks = Object.fromEntries(backup.lectures.map((l) => [l.id, true]));
+    useStudyStore.getState().importData(backup);
+    assert.equal(Object.values(useStudyStore.getState().lectureTicks).filter(Boolean).length, 1);
+    useStudyStore.getState().resetToSeed();
+    assert.equal(useStudyStore.getState().lectureTicks[first.id], true);
+    useStudyStore.getState().setLectureChecked(first.id, false);
+    assert.equal(useStudyStore.getState().lectures[0].status, "not_started");
+    assert.equal(useStudyStore.getState().lectureTicks[first.id], false);
   });
 } finally {
   await server.close();

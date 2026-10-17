@@ -118,8 +118,8 @@ function GoalsPage() {
                     )}
                   </div>
                   <div className="flex items-center gap-2">
-                    <StatusBadge status={g.status} />
-                    <StatusCycle status={g.status} onChange={(st) => updateGoal(g.id, { status: st as ItemStatus })} />
+                    <StatusBadge status={g.metric === "lectures" ? (cur && g.target && cur >= g.target ? "completed" : cur ? "in_progress" : "not_started") : g.status} />
+                    {g.metric !== "lectures" ? <StatusCycle status={g.status} onChange={(st) => updateGoal(g.id, { status: st as ItemStatus })} /> : null}
                     <Button size="sm" variant="ghost" onClick={() => deleteGoal(g.id)}>
                       Remove
                     </Button>

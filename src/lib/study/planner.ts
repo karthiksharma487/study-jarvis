@@ -61,6 +61,21 @@ export function reconcilePlanner(saved: Partial<StudyData>): StudyData {
       .map(({ id, status, notes, url }) => [id, { status, notes, url }])),
   };
   data.lectures = [...lectures, ...oldLectures.filter((l) => !generatedLecture(l.id))];
+  // Upgrade historical individual statuses once; thereafter the ID map is authoritative.
+  const ticks: Record<string, boolean> = {};
+  if (saved.lectureTicks) {
+    for (const [id, checked] of Object.entries(saved.lectureTicks)) {
+      if (checked === true) ticks[aliases.get(id) ?? id] = true;
+    }
+  } else {
+    for (const lecture of data.lectures) if (lecture.status === "completed") ticks[lecture.id] = true;
+  }
+  data.lectureTicks = ticks;
+  data.lectures = data.lectures.map((lecture) => ({
+    ...lecture,
+    status: ticks[lecture.id] ? "completed" : "not_started",
+    completedAt: ticks[lecture.id] ? lecture.completedAt : undefined,
+  }));
   data.resources = [...resources, ...oldResources.filter((r) => !generatedResource(r.id))];
   data.chapters = [
     ...seed.chapters.map((chapter) => ({ ...chapter, notes: saved.chapters?.find((c) => c.id === chapter.id)?.notes ?? chapter.notes })),

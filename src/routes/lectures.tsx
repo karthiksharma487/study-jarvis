@@ -1,8 +1,8 @@
+import { LectureCheckbox } from "@/components/app/lecture-checkbox";
 import { useMemo, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { useStudyStore } from "@/lib/study/store";
 import { FilterPills, PageHeader, StatusBadge, Surface } from "@/components/app/shared";
-import { StatusCycle } from "@/components/app/status-cycle";
 import { Input } from "@/components/ui/input";
 import { kindLabel } from "@/lib/study/labels";
 import type { ItemStatus } from "@/lib/study/types";
@@ -12,7 +12,6 @@ export const Route = createFileRoute("/lectures")({ component: LecturesPage });
 function LecturesPage() {
   const lectures = useStudyStore((s) => s.lectures);
   const subjects = useStudyStore((s) => s.subjects);
-  const setLectureStatus = useStudyStore((s) => s.setLectureStatus);
   const [q, setQ] = useState("");
   const [status, setStatus] = useState<"all" | ItemStatus>("all");
   const [subjectId, setSubjectId] = useState("all");
@@ -41,7 +40,6 @@ function LecturesPage() {
           options={[
             { value: "all", label: "All" },
             { value: "not_started", label: "Not started" },
-            { value: "in_progress", label: "In progress" },
             { value: "completed", label: "Completed" },
           ]}
         />
@@ -71,7 +69,7 @@ function LecturesPage() {
                 </div>
                 <div className="flex items-center gap-2">
                   <StatusBadge status={l.status} />
-                  <StatusCycle status={l.status} onChange={(st) => setLectureStatus(l.id, st)} />
+                  <LectureCheckbox lecture={l} />
                 </div>
               </li>
             ))}

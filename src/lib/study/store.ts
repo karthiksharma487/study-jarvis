@@ -68,8 +68,8 @@ type Updaters = {
   updateTopic: (id: string, patch: Partial<Topic>) => void;
   deleteTopic: (id: string) => void;
   addLecture: (input: Omit<Lecture, "id" | "status" | "notes" | "order"> & { notes?: string; order?: number; status?: ItemStatus }) => string;
-  updateLecture: (id: string, patch: Partial<Lecture>) => void;
-  setLectureStatus: (id: string, status: ItemStatus) => void;
+  updateLecture: (id: string, patch: Partial<Omit<Lecture, "status" | "completedAt">>) => void;
+  setLectureChecked: (id: string, checked: boolean) => void;
   deleteLecture: (id: string) => void;
   addResource: (input: Omit<Resource, "id" | "createdAt" | "status" | "notes"> & { notes?: string; status?: ItemStatus }) => string;
   updateResource: (id: string, patch: Partial<Resource>) => void;
@@ -205,25 +205,25 @@ export const useStudyStore = create<StudyStore>()(
           return {
             lectures: [
               ...s.lectures,
-              { notes: "", status: "not_started", ...input, id, order },
+              { notes: "", ...input, status: "not_started", completedAt: undefined, id, order },
             ],
             activities: pushActivity(s.activities, activity(`Added ${input.title}`, "lecture", "lecture", id)),
           };
         });
         return id;
       },
-      updateLecture: (id, patch) => set((s) => ({ lectures: patchById(s.lectures, id, patch) })),
-      setLectureStatus: (id, status) =>
+      updateLecture: (id, patch) => set((s) => {
+        const { status: _status, completedAt: _completedAt, ...details } = patch as Partial<Lecture>;
+        return { lectures: patchById(s.lectures, id, details) };
+      }),
+      setLectureChecked: (id, checked) =>
         set((s) => {
+          const status = checked ? "completed" : "not_started";
           const lec = s.lectures.find((l) => l.id === id);
           if (!lec) return s;
-          const completedAt = status === "completed" ? nowIso() : status === "not_started" ? undefined : lec.completedAt;
-          const startedAt =
-            status === "in_progress" && !lec.startedAt
-              ? nowIso()
-              : status === "not_started"
-                ? undefined
-                : lec.startedAt;
+          if (Boolean(s.lectureTicks?.[id]) === checked) return s;
+          const completedAt = checked ? nowIso() : undefined;
+          const startedAt = checked ? (lec.startedAt ?? nowIso()) : undefined;
           let revisions = s.revisions;
           let activities = s.activities;
           if (status === "completed" && lec.status !== "completed") {
@@ -249,10 +249,9 @@ export const useStudyStore = create<StudyStore>()(
             }
           } else if (status !== "completed" && lec.status === "completed") {
             activities = pushActivity(activities, activity(`Reopened ${lec.title}`, "lecture", "lecture", id));
-          } else if (status === "in_progress" && lec.status === "not_started") {
-            activities = pushActivity(activities, activity(`Started ${lec.title}`, "lecture", "lecture", id));
           }
           return {
+            lectureTicks: { ...s.lectureTicks, [id]: checked },
             lectures: patchById(s.lectures, id, { status, completedAt, startedAt }),
             revisions,
             activities,
@@ -453,13 +452,14 @@ export const useStudyStore = create<StudyStore>()(
           if (!Array.isArray(next.lectures) || !Array.isArray(next.subjects)) {
             return { ok: false as const, error: "File is missing required academic collections." };
           }
-          set({ ...reconcilePlanner(next) });
+          // Imports restore academic records, but cannot mark lectures in bulk.
+          set({ ...reconcilePlanner({ ...next, lectureTicks: get().lectureTicks ?? {} }) });
           return { ok: true as const };
         } catch {
           return { ok: false as const, error: "Could not read that file." };
         }
       },
-      resetToSeed: () => set({ ...createSeedData(), profile: { ...createSeedData().profile, onboarded: true } }),
+      resetToSeed: () => set({ ...reconcilePlanner({ ...createSeedData(), lectureTicks: get().lectureTicks ?? {} }), profile: { ...createSeedData().profile, onboarded: true } }),
     }),
     {
       name: STORAGE_KEY,
@@ -487,7 +487,7 @@ export const useStudyStore = create<StudyStore>()(
           "deleteTopic",
           "addLecture",
           "updateLecture",
-          "setLectureStatus",
+          "setLectureChecked",
           "deleteLecture",
           "addResource",
           "updateResource",

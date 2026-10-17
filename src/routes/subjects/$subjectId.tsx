@@ -1,3 +1,4 @@
+import { LectureCheckbox } from "@/components/app/lecture-checkbox";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useStudyStore } from "@/lib/study/store";
 import {
@@ -10,14 +11,12 @@ import {
 } from "@/lib/study/progress";
 import { formatDuration, formatPct, subjectKey } from "@/lib/utils";
 import { ChapterStatusBadge, EmptyState, PageHeader, ProgressRow, StatusBadge, Surface } from "@/components/app/shared";
-import { StatusCycle } from "@/components/app/status-cycle";
 
 export const Route = createFileRoute("/subjects/$subjectId")({ component: SubjectDetail });
 
 function SubjectDetail() {
   const { subjectId } = Route.useParams();
   const data = useStudyStore();
-  const setLectureStatus = useStudyStore((s) => s.setLectureStatus);
   const subject = data.subjects.find((s) => s.id === subjectId);
   if (!subject) {
     return (
@@ -47,7 +46,7 @@ function SubjectDetail() {
           <p className="text-[11px] uppercase tracking-[0.14em] text-muted-foreground">Progress</p>
           <p className="mt-1 font-mono text-2xl tabular-nums">{formatPct(p.pct)}</p>
           <p className="text-xs text-muted-foreground">
-            {p.done}/{p.total} items
+            {p.done}/{p.total} delivered lectures ticked
           </p>
         </Surface>
         <Surface>
@@ -98,7 +97,7 @@ function SubjectDetail() {
                     <p className="truncate text-sm">{l.title}</p>
                     <StatusBadge status={l.status} />
                   </div>
-                  <StatusCycle status={l.status} onChange={(st) => setLectureStatus(l.id, st)} />
+                  <LectureCheckbox lecture={l} />
                 </li>
               ))}
             </ul>

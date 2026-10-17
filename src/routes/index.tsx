@@ -3,7 +3,6 @@ import { ArrowRight } from "lucide-react";
 import {
   daysUntil,
   formatDuration,
-  formatPct,
   greeting,
   startOfWeek,
   todayKey,
@@ -12,12 +11,10 @@ import { LEVEL_LABEL } from "@/lib/study/labels";
 import { useStudyStore } from "@/lib/study/store";
 import {
   backlogCounts,
-  courseProgress,
+  completionSummary,
   currentPhase,
-  overallProgress,
   revisionDue,
   studyMinutes,
-  subjectProgress,
   taskCompletion,
 } from "@/lib/study/progress";
 import { recommendNext } from "@/lib/study/next-action";
@@ -34,9 +31,7 @@ function Dashboard() {
   const next = recommendNext(data);
   const insights = buildInsights(data);
   const phase = currentPhase(data);
-  const overall = overallProgress(data);
-  const course = data.courses[0];
-  const courseP = course ? courseProgress(data, course.id) : null;
+  const completion = completionSummary(data, undefined, today);
   const tasksToday = data.tasks.filter((t) => t.dueDate === today);
   const lecturesToday = data.lectures.filter((l) => l.plannedDate === today);
   const blocksToday = data.blocks.filter((b) => b.date === today);
@@ -100,11 +95,11 @@ function Dashboard() {
           <Stat
             label="Lectures"
             value={`${backlog.lectures.done}/${backlog.lectures.total}`}
-            hint="Normal lecture backlog"
+            hint="Ticked / delivered so far"
           />
         </Surface>
         <Surface>
-          <Stat label="Overall" value={formatPct(overall.pct)} hint={`${overall.done} of ${overall.total} items`} />
+          <Stat label="Chapters complete" value={`${completion.chapters.done}/${completion.chapters.total}`} hint="Chapters with delivered lectures" />
         </Surface>
       </div>
 
@@ -237,12 +232,14 @@ function Dashboard() {
         <Surface className="lg:col-span-2">
           <h2 className="mb-4 text-sm font-semibold tracking-tight">Progress</h2>
           <div className="space-y-4">
-            {course && courseP ? (
-              <ProgressRow label={course.name} done={courseP.done} total={courseP.total} pct={courseP.pct} />
-            ) : null}
-            {data.subjects.map((s) => {
-              const p = subjectProgress(data, s.id);
-              return <ProgressRow key={s.id} label={s.name} done={p.done} total={p.total} pct={p.pct} />;
+            {[{ id: undefined, name: "Overall" }, ...data.subjects].map((s) => {
+              const summary = completionSummary(data, s.id, today);
+              return (
+                <div key={s.id ?? "overall"} className="space-y-2">
+                  <ProgressRow label={`${s.name} lectures ticked / delivered`} done={summary.lectures.done} total={summary.lectures.total} pct={summary.lectures.pct} />
+                  <ProgressRow label={`${s.name} chapters complete / delivered`} done={summary.chapters.done} total={summary.chapters.total} pct={summary.chapters.pct} />
+                </div>
+              );
             })}
             <ProgressRow
               label="PDFs"

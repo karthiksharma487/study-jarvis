@@ -329,6 +329,7 @@ export interface JarvisMessage {
 }
 
 export interface StudyData {
+  lectureTicks?: Record<string, boolean>;
   lastKnownPlannerDate?: DayKey;
   legacyPlannerResourceProgress?: Record<string, Pick<Resource, "status" | "notes" | "url">>;
   legacyPlannerProgress?: Record<string, Pick<Lecture, "status" | "notes" | "startedAt" | "completedAt" | "watchMin">>;

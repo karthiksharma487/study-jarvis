@@ -17,7 +17,6 @@ function PlannerPage() {
   const addBlock = useStudyStore((s) => s.addBlock);
   const updateBlock = useStudyStore((s) => s.updateBlock);
   const deleteBlock = useStudyStore((s) => s.deleteBlock);
-  const setLectureStatus = useStudyStore((s) => s.setLectureStatus);
   const setTaskStatus = useStudyStore((s) => s.setTaskStatus);
   const [day, setDay] = useState(todayKey());
   const [title, setTitle] = useState("");
@@ -197,7 +196,6 @@ function PlannerPage() {
                                 onChange={(st) => {
                                   updateBlock(b.id, { status: st });
                                   if (st === "completed") {
-                                    if (b.lectureId) setLectureStatus(b.lectureId, "completed");
                                     if (b.taskId) setTaskStatus(b.taskId, "completed");
                                   }
                                 }}
